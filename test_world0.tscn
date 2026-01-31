@@ -1,0 +1,792 @@
+[gd_scene format=3 uid="uid://d11ah3oqej4wa"]
+
+[ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="1_4mqmr"]
+[ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_uaw4p"]
+
+[node name="World" type="Node" unique_id=141377609]
+
+[node name="Man NPC" parent="." unique_id=315973497 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 32)
+
+[node name="Man NPC2" parent="." unique_id=975694706 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 32)
+
+[node name="Man NPC3" parent="." unique_id=1799848661 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 32)
+
+[node name="Man NPC4" parent="." unique_id=629875528 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 32)
+
+[node name="Man NPC5" parent="." unique_id=1143024263 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 32)
+
+[node name="Man NPC6" parent="." unique_id=226487425 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 32)
+
+[node name="Man NPC7" parent="." unique_id=1906445816 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 32)
+
+[node name="Man NPC8" parent="." unique_id=934656492 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 32)
+
+[node name="Man NPC9" parent="." unique_id=1931081561 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 32)
+
+[node name="Man NPC10" parent="." unique_id=496407864 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 32)
+
+[node name="Man NPC11" parent="." unique_id=1874051121 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 32)
+
+[node name="Man NPC12" parent="." unique_id=181761389 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 32)
+
+[node name="Man NPC13" parent="." unique_id=610303638 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 56)
+
+[node name="Man NPC14" parent="." unique_id=361638938 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 56)
+
+[node name="Man NPC15" parent="." unique_id=1119486204 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 56)
+
+[node name="Man NPC16" parent="." unique_id=1235380688 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 56)
+
+[node name="Man NPC17" parent="." unique_id=1815656892 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 56)
+
+[node name="Man NPC18" parent="." unique_id=1232246826 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 56)
+
+[node name="Man NPC19" parent="." unique_id=1871724938 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 56)
+
+[node name="Man NPC20" parent="." unique_id=819051017 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 56)
+
+[node name="Man NPC21" parent="." unique_id=699797221 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 56)
+
+[node name="Man NPC22" parent="." unique_id=830683986 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 56)
+
+[node name="Man NPC23" parent="." unique_id=2031821806 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 56)
+
+[node name="Man NPC24" parent="." unique_id=1052086951 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 56)
+
+[node name="Man NPC25" parent="." unique_id=647196424 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 80)
+
+[node name="Man NPC70" parent="." unique_id=1062660712 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 104)
+
+[node name="Man NPC71" parent="." unique_id=2137801964 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 128)
+
+[node name="Man NPC72" parent="." unique_id=2004041635 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 152)
+
+[node name="Man NPC26" parent="." unique_id=681132737 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 80)
+
+[node name="Man NPC27" parent="." unique_id=994114886 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 80)
+
+[node name="Man NPC28" parent="." unique_id=91555293 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 80)
+
+[node name="Man NPC29" parent="." unique_id=1623025145 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 80)
+
+[node name="Man NPC30" parent="." unique_id=1210753447 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 80)
+
+[node name="Man NPC31" parent="." unique_id=610315148 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 80)
+
+[node name="Man NPC32" parent="." unique_id=1003995502 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 80)
+
+[node name="Man NPC33" parent="." unique_id=1790325987 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 80)
+
+[node name="Man NPC34" parent="." unique_id=117087154 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 80)
+
+[node name="Man NPC35" parent="." unique_id=580856408 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 80)
+
+[node name="Man NPC36" parent="." unique_id=1747563500 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 80)
+
+[node name="Man NPC37" parent="." unique_id=1962123188 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 104)
+
+[node name="Man NPC38" parent="." unique_id=868744655 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 104)
+
+[node name="Man NPC39" parent="." unique_id=1038744603 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 104)
+
+[node name="Man NPC40" parent="." unique_id=1914044660 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 104)
+
+[node name="Man NPC41" parent="." unique_id=1854648273 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 104)
+
+[node name="Man NPC42" parent="." unique_id=18476150 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 104)
+
+[node name="Man NPC43" parent="." unique_id=426834407 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 104)
+
+[node name="Man NPC44" parent="." unique_id=1768077951 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 104)
+
+[node name="Man NPC45" parent="." unique_id=859872088 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 104)
+
+[node name="Man NPC46" parent="." unique_id=202035091 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 104)
+
+[node name="Man NPC47" parent="." unique_id=383541484 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 104)
+
+[node name="Man NPC48" parent="." unique_id=1902011053 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 128)
+
+[node name="Man NPC49" parent="." unique_id=835513527 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 128)
+
+[node name="Man NPC50" parent="." unique_id=1493791944 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 128)
+
+[node name="Man NPC51" parent="." unique_id=1199185500 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 128)
+
+[node name="Man NPC52" parent="." unique_id=1171143835 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 128)
+
+[node name="Man NPC53" parent="." unique_id=1489333675 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 128)
+
+[node name="Man NPC54" parent="." unique_id=1761645597 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 128)
+
+[node name="Man NPC55" parent="." unique_id=51764062 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 128)
+
+[node name="Man NPC56" parent="." unique_id=1565323691 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 128)
+
+[node name="Man NPC57" parent="." unique_id=1398370749 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 128)
+
+[node name="Man NPC58" parent="." unique_id=1162569657 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 128)
+
+[node name="Man NPC59" parent="." unique_id=1978522652 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 152)
+
+[node name="Man NPC60" parent="." unique_id=1343652212 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 152)
+
+[node name="Man NPC61" parent="." unique_id=1959507907 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 152)
+
+[node name="Man NPC62" parent="." unique_id=2146750888 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 152)
+
+[node name="Man NPC63" parent="." unique_id=444628719 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 152)
+
+[node name="Man NPC64" parent="." unique_id=778526497 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 152)
+
+[node name="Man NPC65" parent="." unique_id=1613553055 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 152)
+
+[node name="Man NPC66" parent="." unique_id=442022164 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 152)
+
+[node name="Man NPC67" parent="." unique_id=809013214 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 152)
+
+[node name="Man NPC68" parent="." unique_id=230854787 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 152)
+
+[node name="Man NPC69" parent="." unique_id=548357057 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 152)
+
+[node name="Man NPC73" parent="." unique_id=1068493399 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 176)
+
+[node name="Man NPC74" parent="." unique_id=571221414 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 200)
+
+[node name="Man NPC75" parent="." unique_id=565386323 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 176)
+
+[node name="Man NPC76" parent="." unique_id=1868005067 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 176)
+
+[node name="Man NPC77" parent="." unique_id=1765352823 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 176)
+
+[node name="Man NPC78" parent="." unique_id=1348312824 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 176)
+
+[node name="Man NPC79" parent="." unique_id=1264236044 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 176)
+
+[node name="Man NPC80" parent="." unique_id=608787562 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 176)
+
+[node name="Man NPC81" parent="." unique_id=2121622619 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 176)
+
+[node name="Man NPC82" parent="." unique_id=629553752 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 176)
+
+[node name="Man NPC83" parent="." unique_id=582694276 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 176)
+
+[node name="Man NPC84" parent="." unique_id=565531612 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 176)
+
+[node name="Man NPC85" parent="." unique_id=1263273247 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 176)
+
+[node name="Man NPC86" parent="." unique_id=656722731 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 200)
+
+[node name="Man NPC87" parent="." unique_id=16928632 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 200)
+
+[node name="Man NPC88" parent="." unique_id=1242079370 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 200)
+
+[node name="Man NPC89" parent="." unique_id=645078864 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 200)
+
+[node name="Man NPC90" parent="." unique_id=1184130210 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 200)
+
+[node name="Man NPC91" parent="." unique_id=972776304 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 200)
+
+[node name="Man NPC92" parent="." unique_id=724286384 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 200)
+
+[node name="Man NPC93" parent="." unique_id=653591252 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 200)
+
+[node name="Man NPC94" parent="." unique_id=1135599388 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 200)
+
+[node name="Man NPC95" parent="." unique_id=1154280396 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 200)
+
+[node name="Man NPC96" parent="." unique_id=727378060 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 200)
+
+[node name="Man NPC97" parent="." unique_id=2081843135 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 32)
+
+[node name="Man NPC98" parent="." unique_id=222547788 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 32)
+
+[node name="Man NPC99" parent="." unique_id=1049289957 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 32)
+
+[node name="Man NPC100" parent="." unique_id=1404774779 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 32)
+
+[node name="Man NPC101" parent="." unique_id=1861136442 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 32)
+
+[node name="Man NPC102" parent="." unique_id=864908077 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 32)
+
+[node name="Man NPC103" parent="." unique_id=795016348 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 56)
+
+[node name="Man NPC104" parent="." unique_id=708794715 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 56)
+
+[node name="Man NPC105" parent="." unique_id=508399107 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 56)
+
+[node name="Man NPC106" parent="." unique_id=2022157948 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 56)
+
+[node name="Man NPC107" parent="." unique_id=1628416892 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 56)
+
+[node name="Man NPC108" parent="." unique_id=1301215313 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 56)
+
+[node name="Man NPC109" parent="." unique_id=1285613250 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 80)
+
+[node name="Man NPC110" parent="." unique_id=1112069258 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 80)
+
+[node name="Man NPC111" parent="." unique_id=1458803350 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 80)
+
+[node name="Man NPC112" parent="." unique_id=2076752494 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 80)
+
+[node name="Man NPC113" parent="." unique_id=596991749 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 80)
+
+[node name="Man NPC114" parent="." unique_id=2030814651 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 80)
+
+[node name="Man NPC115" parent="." unique_id=1903636691 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 104)
+
+[node name="Man NPC116" parent="." unique_id=1772239393 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 104)
+
+[node name="Man NPC117" parent="." unique_id=1635417948 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 104)
+
+[node name="Man NPC118" parent="." unique_id=840976193 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 104)
+
+[node name="Man NPC119" parent="." unique_id=949777043 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 104)
+
+[node name="Man NPC120" parent="." unique_id=1709916603 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 104)
+
+[node name="Man NPC121" parent="." unique_id=1698566061 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 128)
+
+[node name="Man NPC122" parent="." unique_id=101500956 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 128)
+
+[node name="Man NPC123" parent="." unique_id=776779281 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 128)
+
+[node name="Man NPC124" parent="." unique_id=327952580 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 128)
+
+[node name="Man NPC125" parent="." unique_id=1752582145 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 128)
+
+[node name="Man NPC126" parent="." unique_id=1612105880 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 128)
+
+[node name="Man NPC127" parent="." unique_id=1209851369 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 152)
+
+[node name="Man NPC128" parent="." unique_id=2136921277 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 152)
+
+[node name="Man NPC129" parent="." unique_id=1125150060 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 152)
+
+[node name="Man NPC130" parent="." unique_id=405459990 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 152)
+
+[node name="Man NPC131" parent="." unique_id=1365064519 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 152)
+
+[node name="Man NPC132" parent="." unique_id=1839576980 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 152)
+
+[node name="Man NPC133" parent="." unique_id=337167018 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 176)
+
+[node name="Man NPC134" parent="." unique_id=1702955338 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 176)
+
+[node name="Man NPC135" parent="." unique_id=1748946923 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 176)
+
+[node name="Man NPC136" parent="." unique_id=1058487463 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 176)
+
+[node name="Man NPC137" parent="." unique_id=1515217248 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 176)
+
+[node name="Man NPC138" parent="." unique_id=1943966710 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 176)
+
+[node name="Man NPC139" parent="." unique_id=222844448 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 200)
+
+[node name="Man NPC140" parent="." unique_id=1472941865 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 200)
+
+[node name="Man NPC141" parent="." unique_id=2037001842 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 200)
+
+[node name="Man NPC142" parent="." unique_id=2109940047 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 200)
+
+[node name="Man NPC143" parent="." unique_id=180049652 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 200)
+
+[node name="Man NPC144" parent="." unique_id=1927439997 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 200)
+
+[node name="Man NPC145" parent="." unique_id=376144166 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 32)
+
+[node name="Man NPC146" parent="." unique_id=1786479344 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 32)
+
+[node name="Man NPC147" parent="." unique_id=1175033281 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 32)
+
+[node name="Man NPC148" parent="." unique_id=1519947659 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 32)
+
+[node name="Man NPC149" parent="." unique_id=1622232739 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 32)
+
+[node name="Man NPC150" parent="." unique_id=1309825312 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 32)
+
+[node name="Man NPC151" parent="." unique_id=1266426290 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 32)
+
+[node name="Man NPC154" parent="." unique_id=1377958386 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 56)
+
+[node name="Man NPC155" parent="." unique_id=1714481692 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 56)
+
+[node name="Man NPC156" parent="." unique_id=493099816 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 56)
+
+[node name="Man NPC157" parent="." unique_id=425818196 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 56)
+
+[node name="Man NPC158" parent="." unique_id=628359776 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 56)
+
+[node name="Man NPC159" parent="." unique_id=1667888607 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 56)
+
+[node name="Man NPC160" parent="." unique_id=1351252644 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 56)
+
+[node name="Man NPC163" parent="." unique_id=145602577 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 80)
+
+[node name="Man NPC164" parent="." unique_id=1220020255 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 80)
+
+[node name="Man NPC165" parent="." unique_id=1520145848 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 80)
+
+[node name="Man NPC166" parent="." unique_id=1557892998 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 80)
+
+[node name="Man NPC167" parent="." unique_id=1279479022 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 80)
+
+[node name="Man NPC168" parent="." unique_id=290206630 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 80)
+
+[node name="Man NPC169" parent="." unique_id=894910288 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 80)
+
+[node name="Man NPC172" parent="." unique_id=332679294 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 104)
+
+[node name="Man NPC173" parent="." unique_id=1925482786 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 104)
+
+[node name="Man NPC174" parent="." unique_id=1305673590 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 104)
+
+[node name="Man NPC175" parent="." unique_id=2144959579 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 104)
+
+[node name="Man NPC176" parent="." unique_id=1450360431 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 104)
+
+[node name="Man NPC177" parent="." unique_id=1039604487 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 104)
+
+[node name="Man NPC178" parent="." unique_id=1060156163 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 104)
+
+[node name="Man NPC181" parent="." unique_id=778019098 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 128)
+
+[node name="Man NPC182" parent="." unique_id=166433544 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 128)
+
+[node name="Man NPC183" parent="." unique_id=1905251229 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 128)
+
+[node name="Man NPC184" parent="." unique_id=1798834575 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 128)
+
+[node name="Man NPC185" parent="." unique_id=820850363 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 128)
+
+[node name="Man NPC186" parent="." unique_id=1851100042 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 128)
+
+[node name="Man NPC187" parent="." unique_id=1587764649 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 128)
+
+[node name="Man NPC190" parent="." unique_id=1184174453 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 152)
+
+[node name="Man NPC191" parent="." unique_id=1659773987 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 152)
+
+[node name="Man NPC192" parent="." unique_id=38967910 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 152)
+
+[node name="Man NPC193" parent="." unique_id=214212856 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 152)
+
+[node name="Man NPC194" parent="." unique_id=810296384 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 152)
+
+[node name="Man NPC195" parent="." unique_id=1427620882 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 152)
+
+[node name="Man NPC196" parent="." unique_id=249165274 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 152)
+
+[node name="Man NPC199" parent="." unique_id=391570124 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 176)
+
+[node name="Man NPC200" parent="." unique_id=1947606888 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 176)
+
+[node name="Man NPC201" parent="." unique_id=307421936 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 176)
+
+[node name="Man NPC202" parent="." unique_id=1553410035 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 176)
+
+[node name="Man NPC203" parent="." unique_id=1535221541 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 176)
+
+[node name="Man NPC204" parent="." unique_id=1975109345 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 176)
+
+[node name="Man NPC205" parent="." unique_id=1836739190 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 176)
+
+[node name="Man NPC208" parent="." unique_id=903401391 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 200)
+
+[node name="Man NPC209" parent="." unique_id=1360001669 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 200)
+
+[node name="Man NPC210" parent="." unique_id=1329654227 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 200)
+
+[node name="Man NPC211" parent="." unique_id=1156528638 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 200)
+
+[node name="Man NPC212" parent="." unique_id=1604830898 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 200)
+
+[node name="Man NPC213" parent="." unique_id=2038250313 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 200)
+
+[node name="Man NPC214" parent="." unique_id=615192692 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 200)
+
+[node name="Man NPC217" parent="." unique_id=507543165 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 32)
+
+[node name="Man NPC218" parent="." unique_id=782072105 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 32)
+
+[node name="Man NPC219" parent="." unique_id=540234031 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 32)
+
+[node name="Man NPC220" parent="." unique_id=2038640201 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 32)
+
+[node name="Man NPC223" parent="." unique_id=1515233517 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 56)
+
+[node name="Man NPC224" parent="." unique_id=2084805299 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 56)
+
+[node name="Man NPC225" parent="." unique_id=2137900437 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 56)
+
+[node name="Man NPC226" parent="." unique_id=623989217 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 56)
+
+[node name="Man NPC229" parent="." unique_id=588129121 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 80)
+
+[node name="Man NPC230" parent="." unique_id=697185265 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 80)
+
+[node name="Man NPC231" parent="." unique_id=322669687 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 80)
+
+[node name="Man NPC232" parent="." unique_id=1962015158 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 80)
+
+[node name="Man NPC235" parent="." unique_id=1536047145 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 104)
+
+[node name="Man NPC236" parent="." unique_id=687765748 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 104)
+
+[node name="Man NPC237" parent="." unique_id=2035070446 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 104)
+
+[node name="Man NPC238" parent="." unique_id=1416047374 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 104)
+
+[node name="Man NPC241" parent="." unique_id=1741641611 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 128)
+
+[node name="Man NPC242" parent="." unique_id=1480363160 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 128)
+
+[node name="Man NPC243" parent="." unique_id=15507871 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 128)
+
+[node name="Man NPC244" parent="." unique_id=1799411289 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 128)
+
+[node name="Man NPC247" parent="." unique_id=1495787396 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 152)
+
+[node name="Man NPC248" parent="." unique_id=1346435923 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 152)
+
+[node name="Man NPC249" parent="." unique_id=479441248 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 152)
+
+[node name="Man NPC250" parent="." unique_id=1958036523 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 152)
+
+[node name="Man NPC253" parent="." unique_id=1039898527 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 176)
+
+[node name="Man NPC254" parent="." unique_id=1573202009 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 176)
+
+[node name="Man NPC255" parent="." unique_id=1225020680 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 176)
+
+[node name="Man NPC256" parent="." unique_id=332437246 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 176)
+
+[node name="Man NPC259" parent="." unique_id=606336137 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 200)
+
+[node name="Man NPC260" parent="." unique_id=1396519271 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 200)
+
+[node name="Man NPC261" parent="." unique_id=1827556069 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 200)
+
+[node name="Man NPC262" parent="." unique_id=1857603821 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 200)
+
+[node name="Man NPC152" parent="." unique_id=144803646 instance=ExtResource("1_4mqmr")]
+position = Vector2(24, 224)
+
+[node name="Man NPC153" parent="." unique_id=354461187 instance=ExtResource("1_4mqmr")]
+position = Vector2(48, 224)
+
+[node name="Man NPC161" parent="." unique_id=777396725 instance=ExtResource("1_4mqmr")]
+position = Vector2(72, 224)
+
+[node name="Man NPC162" parent="." unique_id=1066764681 instance=ExtResource("1_4mqmr")]
+position = Vector2(96, 224)
+
+[node name="Man NPC170" parent="." unique_id=1027916401 instance=ExtResource("1_4mqmr")]
+position = Vector2(120, 224)
+
+[node name="Man NPC171" parent="." unique_id=1821696457 instance=ExtResource("1_4mqmr")]
+position = Vector2(144, 224)
+
+[node name="Man NPC179" parent="." unique_id=316210210 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 224)
+
+[node name="Man NPC180" parent="." unique_id=363894384 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 224)
+
+[node name="Man NPC188" parent="." unique_id=108718169 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 224)
+
+[node name="Man NPC189" parent="." unique_id=1118319022 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 224)
+
+[node name="Man NPC197" parent="." unique_id=1331395554 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 224)
+
+[node name="Man NPC198" parent="." unique_id=961994561 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 224)
+
+[node name="Man NPC206" parent="." unique_id=642303378 instance=ExtResource("1_4mqmr")]
+position = Vector2(168, 224)
+
+[node name="Man NPC207" parent="." unique_id=1587002285 instance=ExtResource("1_4mqmr")]
+position = Vector2(192, 224)
+
+[node name="Man NPC215" parent="." unique_id=275420517 instance=ExtResource("1_4mqmr")]
+position = Vector2(216, 224)
+
+[node name="Man NPC216" parent="." unique_id=388411088 instance=ExtResource("1_4mqmr")]
+position = Vector2(240, 224)
+
+[node name="Man NPC221" parent="." unique_id=723715955 instance=ExtResource("1_4mqmr")]
+position = Vector2(264, 224)
+
+[node name="Man NPC222" parent="." unique_id=2062868936 instance=ExtResource("1_4mqmr")]
+position = Vector2(288, 224)
+
+[node name="Man NPC227" parent="." unique_id=1796380585 instance=ExtResource("1_4mqmr")]
+position = Vector2(312, 224)
+
+[node name="Man NPC228" parent="." unique_id=1557161166 instance=ExtResource("1_4mqmr")]
+position = Vector2(336, 224)
+
+[node name="Man NPC233" parent="." unique_id=2058694064 instance=ExtResource("1_4mqmr")]
+position = Vector2(360, 224)
+
+[node name="Man NPC234" parent="." unique_id=429750443 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 224)
+
+[node name="Man NPC239" parent="." unique_id=1987030166 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 224)
+
+[node name="Man NPC240" parent="." unique_id=1877410837 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 224)
+
+[node name="Man NPC245" parent="." unique_id=3303475 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 224)
+
+[node name="Man NPC263" parent="." unique_id=1030491443 instance=ExtResource("1_4mqmr")]
+position = Vector2(384, 224)
+
+[node name="Man NPC264" parent="." unique_id=1004144651 instance=ExtResource("1_4mqmr")]
+position = Vector2(408, 224)
+
+[node name="Man NPC265" parent="." unique_id=1309431875 instance=ExtResource("1_4mqmr")]
+position = Vector2(432, 224)
+
+[node name="Man NPC266" parent="." unique_id=1413407941 instance=ExtResource("1_4mqmr")]
+position = Vector2(456, 224)
+
+[node name="CharacterBody2D" parent="." unique_id=226970753 instance=ExtResource("2_uaw4p")]
+position = Vector2(876, 300)
