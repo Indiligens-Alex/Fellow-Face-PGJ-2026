@@ -6,7 +6,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2b317"]
 shader = ExtResource("2_ubqif")
-shader_parameter/active = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6mhi7"]
 radius = 35.0
