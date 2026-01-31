@@ -15,7 +15,6 @@ radius = 31.016125
 [node name="Player" type="CharacterBody2D" unique_id=226970753]
 z_index = 1
 script = ExtResource("1_onrkg")
-base_speed = 15.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784198692]
 shape = SubResource("RectangleShape2D_onrkg")

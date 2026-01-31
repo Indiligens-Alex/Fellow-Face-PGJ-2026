@@ -1,4 +1,5 @@
 class_name NPC extends Area2D
+signal got_disgusted
 
 var disgusted: bool
 var destination: Vector2
@@ -133,6 +134,7 @@ func turn_sprite_digusted() -> void:
 			destination = global_position + Vector2(search_radius* [-1,1].pick_random(), -search_radius)*2
 	
 func reaction() -> void:
+	got_disgusted.emit()
 	disgusted = true
 	main.isolation += 5;
 	disgusted_timer.start(5)

@@ -2,8 +2,9 @@ class_name Player extends CharacterBody2D
 signal interaction
 
 var direction:Vector2 = Vector2.ZERO;
-@export var base_speed: float = 25
+@export var base_speed: float = 20
 var speed = base_speed
+
 @onready var sprite: Sprite2D = %Sprite
 
 func _ready() -> void:
@@ -42,8 +43,9 @@ func unmask() -> void:
 
 func _on_man_npc_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
+
 func lose():
 	print(":(")
+
 func interact():
 	interaction.emit()
-	unmask()
