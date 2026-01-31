@@ -15,6 +15,8 @@ func _physics_process(delta: float) -> void:
 		unmask()
 	velocity = direction.normalized()*speed;
 	move_and_slide()
+	if main.isolation >= 100:
+		lose()
 
 func unmask() -> void:
 	sprite.frame_coords.y = sprite.frame_coords.y-1
@@ -24,7 +26,8 @@ func unmask() -> void:
 	sprite.frame_coords.y = sprite.frame_coords.y+1
 	speed = base_speed
 
-
+func lose():
+	print(":(")
 func _on_man_npc_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
 func interact():

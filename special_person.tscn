@@ -1,4 +1,54 @@
-[gd_scene format=3 uid="uid://uh5i4whljh7f"]
+[gd_scene format=3 uid="uid://bhqgytetkbcar"]
 
-[node name="Special Person" type="CharacterBody2D" unique_id=1419157298]
+[ext_resource type="Script" uid="uid://b78kox4w3imi3" path="res://special_person.gd" id="1_i6q8b"]
+[ext_resource type="Shader" uid="uid://c1xvfnqfulch5" path="res://glowPeople.gdshader" id="2_e7o2e"]
+[ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="3_pm4tw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mhi7"]
+radius = 35.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2b317"]
+shader = ExtResource("2_e7o2e")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubqif"]
+size = Vector2(18, 35.5)
+
+[node name="Man NPC" type="Area2D" unique_id=1927863307]
 y_sort_enabled = true
+script = ExtResource("1_i6q8b")
+
+[node name="Cooldown Timer" type="Timer" parent="." unique_id=402413482]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056230280]
+shape = SubResource("CircleShape2D_6mhi7")
+
+[node name="Man" type="Sprite2D" parent="." unique_id=573814096]
+unique_name_in_owner = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_2b317")
+position = Vector2(-0.5, 0)
+texture = ExtResource("3_pm4tw")
+hframes = 4
+
+[node name="GivingChance" type="Timer" parent="." unique_id=13934617]
+one_shot = true
+
+[node name="DisgustedTimer" type="Timer" parent="." unique_id=311554407]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="MouseInteraction" type="Area2D" parent="." unique_id=183544031]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseInteraction" unique_id=1447216599]
+position = Vector2(0, -12.75)
+shape = SubResource("RectangleShape2D_ubqif")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="GivingChance" to="." method="_on_giving_chance_timeout"]
+[connection signal="timeout" from="DisgustedTimer" to="." method="_on_disgusted_timer_timeout"]
+[connection signal="input_event" from="MouseInteraction" to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="MouseInteraction" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MouseInteraction" to="." method="_on_mouse_exited"]

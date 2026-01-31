@@ -136,6 +136,7 @@ func turn_sprite_digusted() -> void:
 	
 func reaction() -> void:
 	disgusted = true
+	main.isolation += 5;
 	disgusted_timer.start(5)
 
 func _on_disgusted_timer_timeout() -> void:
@@ -169,9 +170,10 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("interact") && selected:
-		forsake()
+		clicked()
 
-func forsake():
+func clicked():
+	main.isolation += 50;
 	print("i don't like you")
 
 
