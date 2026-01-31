@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="1_4mqmr"]
 [ext_resource type="Script" uid="uid://d3v1pwh7itink" path="res://test_world_0.gd" id="1_uaw4p"]
 [ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_uaw4p"]
+[ext_resource type="AudioStream" uid="uid://brhjswnmgyhm1" path="res://audio/100ambeince.wav" id="4_e6aui"]
 
 [node name="World" type="Node" unique_id=1342123251]
 script = ExtResource("1_uaw4p")
@@ -794,3 +795,8 @@ position = Vector2(432, 224)
 
 [node name="Man NPC266" parent="NPC Collection" unique_id=1413407941 instance=ExtResource("1_4mqmr")]
 position = Vector2(456, 224)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1462873763]
+stream = ExtResource("4_e6aui")
+volume_db = -6.0
+autoplay = true
