@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bq1vsbhc58hf2"]
+
+[ext_resource type="Script" uid="uid://2k4feu1tanwy" path="res://interactable.gd" id="1_jcy0q"]
+[ext_resource type="Texture2D" uid="uid://cux70wrrjf800" path="res://art/icon.svg" id="1_wh154"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27ykc"]
+radius = 12.0
+
+[node name="Node2D" type="Area2D" unique_id=1471419826 groups=["interactable"]]
+script = ExtResource("1_jcy0q")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1803011030]
+position = Vector2(7.1525574e-07, 1.1920929e-07)
+scale = Vector2(0.109375, 0.10937501)
+texture = ExtResource("1_wh154")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049295723]
+shape = SubResource("CircleShape2D_27ykc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

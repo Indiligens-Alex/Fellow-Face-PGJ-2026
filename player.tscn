@@ -6,12 +6,21 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(17, 28)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
+radius = 31.016125
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=226970753]
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784198692]
 position = Vector2(1.5, -13)
 shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="PlayerInteract" type="Area2D" parent="." unique_id=1370253406 groups=["player"]]
+position = Vector2(2, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteract" unique_id=1610392612]
+shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=824839357]
 texture_filter = 1
