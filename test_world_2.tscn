@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cw17lj1g8kxwn"]
+
+[ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="1_smt3u"]
+[ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_x1iep"]
+
+[node name="Test World 2" type="Node" unique_id=489548906]
+
+[node name="Man NPC" parent="." unique_id=787066030 instance=ExtResource("1_smt3u")]
+position = Vector2(183, 79)
+walk_time = null
+search_radius = null
+
+[node name="CharacterBody2D" parent="." unique_id=226970753 instance=ExtResource("2_x1iep")]
+position = Vector2(181, 108)
