@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cnnp2nutpq17s"]
+
+[ext_resource type="PackedScene" uid="uid://b0hdyyf0yv2ih" path="res://Music.tscn" id="1_vhm1o"]
+[ext_resource type="Script" uid="uid://ssg8uoppionq" path="res://ui_ingame.gd" id="1_y824o"]
+
+[node name="Control" type="Control" unique_id=911047087]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y824o")
+
+[node name="Music" parent="." unique_id=1168137090 instance=ExtResource("1_vhm1o")]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=137463461]
+modulate = Color(1, 1, 1, 0.52156866)
+self_modulate = Color(0.6627451, 0.84313726, 1, 1)
+layout_mode = 0
+offset_left = 23.0
+offset_top = 24.0
+offset_right = 61.0
+offset_bottom = 239.0
+step = 1.0
+value = 83.0
+rounded = true
+fill_mode = 3

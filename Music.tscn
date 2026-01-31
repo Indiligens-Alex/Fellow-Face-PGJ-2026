@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b0hdyyf0yv2ih"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_fbcf0"]
+stream_count = 2
+stream_0/volume = 0.0
+stream_1/volume = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1168137090]
+stream = SubResource("AudioStreamSynchronized_fbcf0")
