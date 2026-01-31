@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://1mprx2rn1ykq"]
+
+[ext_resource type="PackedScene" uid="uid://bq1vsbhc58hf2" path="res://interactable.tscn" id="1_7fcbi"]
+[ext_resource type="Texture2D" uid="uid://unluanvduitg" path="res://art/clownShoes.png" id="2_bh3gi"]
+
+[node name="Node2D" unique_id=1471419826 instance=ExtResource("1_7fcbi")]
+
+[node name="Sprite2D" parent="." index="0" unique_id=1803011030]
+texture = ExtResource("2_bh3gi")
+hframes = 1
+vframes = 1

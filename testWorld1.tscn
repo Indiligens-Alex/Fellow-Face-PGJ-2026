@@ -4,11 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_xslxd"]
 [ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="3_xslxd"]
 [ext_resource type="PackedScene" uid="uid://bhqgytetkbcar" path="res://special_person.tscn" id="4_vn0e8"]
+[ext_resource type="Texture2D" uid="uid://c1g5dqmaprevx" path="res://art/hotDogTie.png" id="5_frimb"]
 
 [node name="Node2D" type="Node2D" unique_id=1946616107]
-
-[node name="Node2D" parent="." unique_id=1471419826 instance=ExtResource("1_eh0h2")]
-position = Vector2(48, 176)
 
 [node name="CharacterBody2D" parent="." unique_id=226970753 instance=ExtResource("2_xslxd")]
 z_index = 0
@@ -23,3 +21,13 @@ position = Vector2(248, 72)
 
 [node name="Man NPC3" parent="." unique_id=1904318906 instance=ExtResource("4_vn0e8")]
 position = Vector2(192, 216)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1254701596]
+position = Vector2(177, 151)
+zoom = Vector2(2, 2)
+
+[node name="Node2D" parent="." unique_id=1471419826 instance=ExtResource("1_eh0h2")]
+position = Vector2(128, 105)
+changeClothes = true
+clothes = "tie"
+texture = ExtResource("5_frimb")

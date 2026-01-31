@@ -47,3 +47,11 @@ func lose():
 func interact():
 	interaction.emit()
 	unmask()
+func changeClothes(cloth:String):
+	match cloth:
+		"mask":
+			$Head.frame_coords.y = 1
+		"tie":
+			$Body.frame_coords.y = 1
+		"shoes":
+			$Shoes.frame_coords.y = 1

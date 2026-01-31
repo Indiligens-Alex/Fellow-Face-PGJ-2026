@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dri6qstv1rdci"]
+
+[ext_resource type="PackedScene" uid="uid://bq1vsbhc58hf2" path="res://interactable.tscn" id="1_rfo3b"]
+[ext_resource type="Texture2D" uid="uid://c1g5dqmaprevx" path="res://art/hotDogTie.png" id="2_2c11c"]
+
+[sub_resource type="GDScript" id="GDScript_2c11c"]
+script/source = "extends \"res://interactable.gd\"
+func interact():
+	main.player.changeClothes(\"tie\")
+"
+
+[node name="Node2D" unique_id=1471419826 instance=ExtResource("1_rfo3b")]
+script = SubResource("GDScript_2c11c")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1803011030]
+texture = ExtResource("2_2c11c")
+hframes = 1
+vframes = 1
