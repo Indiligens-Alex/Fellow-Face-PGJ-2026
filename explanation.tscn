@@ -121,8 +121,34 @@ offset_bottom = 181.0
 scale = Vector2(0.75, 0.75)
 text = "A person who
 will accept you
-without the mask"
+without a mask"
 vertical_alignment = 1
+
+[node name="Label15" type="Label" parent="." unique_id=994212489]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 416.0
+offset_bottom = 293.0
+scale = Vector2(0.75, 0.75)
+text = "Reveal yourself
+if you belive
+this person
+won't run away"
+horizontal_alignment = 1
+
+[node name="Label16" type="Label" parent="." unique_id=1011963059]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 192.0
+offset_right = 552.0
+offset_bottom = 293.0
+scale = Vector2(0.75, 0.75)
+text = "Reveal yourself
+if you belive
+this person
+won't run away"
+horizontal_alignment = 1
 
 [node name="Label13" type="Label" parent="." unique_id=1961861635]
 layout_mode = 0
@@ -165,6 +191,14 @@ offset_right = 133.0
 offset_bottom = 170.0
 text = "- Use -"
 
+[node name="Label14" type="Label" parent="." unique_id=459996130]
+layout_mode = 0
+offset_left = 272.0
+offset_top = 168.0
+offset_right = 337.0
+offset_bottom = 191.0
+text = "- Finaly -"
+
 [node name="Owo" type="Sprite2D" parent="." unique_id=604186842]
 position = Vector2(108.5, 205.5)
 scale = Vector2(2, 2)
@@ -179,10 +213,3 @@ texture = ExtResource("1_5elfn")
 position = Vector2(346, 112)
 texture = ExtResource("3_mb7is")
 hframes = 4
-
-[node name="Label11" type="Label" parent="." unique_id=20130396]
-layout_mode = 0
-offset_left = 248.0
-offset_top = 176.0
-offset_right = 348.0
-offset_bottom = 199.0
