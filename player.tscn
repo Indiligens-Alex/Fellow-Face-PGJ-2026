@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://8vfynrnle4k0"]
+
+[ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_4flbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
+size = Vector2(17, 28)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=226970753]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=784198692]
+position = Vector2(1.5, -13)
+shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="ScaryMan" type="Sprite2D" parent="." unique_id=824839357]
+texture_filter = 1
+position = Vector2(2, -29)
+texture = ExtResource("1_4flbx")
