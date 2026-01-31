@@ -6,6 +6,7 @@
 [node name="World" type="Node" unique_id=489548906]
 
 [node name="Player" parent="." unique_id=226970753 instance=ExtResource("2_x1iep")]
-position = Vector2(29, 35)
+position = Vector2(271, 72)
 
 [node name="Man NPC" parent="." unique_id=1927863307 instance=ExtResource("1_smt3u")]
+position = Vector2(232, 113)

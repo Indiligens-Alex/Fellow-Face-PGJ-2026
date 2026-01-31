@@ -39,4 +39,4 @@ func _on_start_button_pressed() -> void:
 	skip_button.text = "OK"
 
 func _on_skip_button_pressed() -> void:
-	get_tree().change_scene_to_file.call_deferred("res://test_world0.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://explanation.tscn")
