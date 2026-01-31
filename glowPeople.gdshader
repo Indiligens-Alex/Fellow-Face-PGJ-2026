@@ -1,5 +1,5 @@
 shader_type canvas_item;
-uniform bool active = true;
+instance uniform bool active = false;
 void vertex() {
 	COLOR =  vec4(1.1, 1.1, 1.1, 1.0);
 }

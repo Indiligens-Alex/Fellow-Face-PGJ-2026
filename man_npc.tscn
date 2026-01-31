@@ -9,7 +9,6 @@ radius = 35.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2b317"]
 shader = ExtResource("2_ubqif")
-shader_parameter/active = true
 
 [node name="Man NPC" type="Area2D" unique_id=1927863307]
 y_sort_enabled = true
