@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bq1vsbhc58hf2" path="res://interactable.tscn" id="1_eh0h2"]
 [ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_xslxd"]
+[ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="3_xslxd"]
 
 [node name="Node2D" type="Node2D" unique_id=1946616107]
 
@@ -9,4 +10,12 @@
 position = Vector2(47, 131)
 
 [node name="CharacterBody2D" parent="." unique_id=226970753 instance=ExtResource("2_xslxd")]
+z_index = 0
 position = Vector2(182, 87)
+base_speed = 50.0
+
+[node name="Man NPC" parent="." unique_id=1927863307 instance=ExtResource("3_xslxd")]
+position = Vector2(72, 163)
+
+[node name="Man NPC2" parent="." unique_id=2119870850 instance=ExtResource("3_xslxd")]
+position = Vector2(59, 90)

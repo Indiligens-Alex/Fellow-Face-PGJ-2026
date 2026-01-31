@@ -6,8 +6,6 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_surkw"]
 shader = ExtResource("2_0k2he")
-shader_parameter/color = Vector4(1, 1, 1, 1)
-shader_parameter/active = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27ykc"]
 radius = 12.0
@@ -28,3 +26,4 @@ shape = SubResource("CircleShape2D_27ykc")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

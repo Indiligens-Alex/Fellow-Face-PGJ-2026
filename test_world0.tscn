@@ -6,6 +6,7 @@
 [node name="World" type="Node" unique_id=1342123251]
 
 [node name="Player" parent="." unique_id=226970753 instance=ExtResource("2_uaw4p")]
+z_index = 0
 position = Vector2(242, 161)
 
 [node name="NPC Collection" type="Node" parent="." unique_id=121980016]
