@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fellow Face"
-run/main_scene="uid://d11ah3oqej4wa"
+run/main_scene="uid://dt3gxy7kk87wx"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://b3f3npo06vjsd"
 

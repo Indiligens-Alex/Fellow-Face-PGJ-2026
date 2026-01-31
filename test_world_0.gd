@@ -1,5 +1,9 @@
 extends Node
 
-enum GameState { Start, Game, End }
+enum GameState { Game, End }
 
-var state: GameState = GameState.Start
+var state: GameState = GameState.Game
+@onready var player: Player = $Player
+
+#if player is dead
+# Game over
