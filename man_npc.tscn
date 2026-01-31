@@ -4,25 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_nsuh6"]
 [ext_resource type="Shader" uid="uid://c1xvfnqfulch5" path="res://glowPeople.gdshader" id="2_ubqif"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6mhi7"]
-radius = 35.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b317"]
+size = Vector2(16, 25)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2b317"]
 shader = ExtResource("2_ubqif")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubqif"]
-size = Vector2(18, 35.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubqif"]
+radius = 140.0
 
-[node name="Man NPC" type="Area2D" unique_id=1927863307]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubqif"]
+size = Vector2(18, 48)
+
+[node name="Man NPC" type="CharacterBody2D" unique_id=1183907964]
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 4
 script = ExtResource("1_6mhi7")
+
+[node name="ToleranceTimer" type="Timer" parent="." unique_id=1711778206]
 
 [node name="Cooldown Timer" type="Timer" parent="." unique_id=402413482]
 unique_name_in_owner = true
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056230280]
-shape = SubResource("CircleShape2D_6mhi7")
+position = Vector2(0, 17.5)
+shape = SubResource("RectangleShape2D_2b317")
 
 [node name="Man" type="Sprite2D" parent="." unique_id=573814096]
 unique_name_in_owner = true
@@ -36,15 +44,24 @@ hframes = 4
 unique_name_in_owner = true
 one_shot = true
 
+[node name="playerClose" type="Area2D" parent="." unique_id=852689918]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerClose" unique_id=107897889]
+shape = SubResource("CircleShape2D_ubqif")
+
 [node name="MouseInteraction" type="Area2D" parent="." unique_id=183544031]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseInteraction" unique_id=1447216599]
-position = Vector2(0, -12.75)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_ubqif")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1510129223]
+rect = Rect2(-12, -32, 25, 63)
+
+[connection signal="timeout" from="ToleranceTimer" to="." method="_on_tolerance_timer_timeout"]
 [connection signal="timeout" from="DisgustedTimer" to="." method="_on_disgusted_timer_timeout"]
+[connection signal="body_entered" from="playerClose" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="playerClose" to="." method="_on_body_exited"]
 [connection signal="input_event" from="MouseInteraction" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="MouseInteraction" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MouseInteraction" to="." method="_on_mouse_exited"]

@@ -13,7 +13,7 @@ shader = ExtResource("2_e7o2e")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ubqif"]
 size = Vector2(18, 35.5)
 
-[node name="Special Person" type="Area2D" unique_id=1927863307]
+[node name="Special Person" type="CharacterBody2D" unique_id=2090922409]
 y_sort_enabled = true
 script = ExtResource("1_i6q8b")
 
@@ -49,11 +49,6 @@ shape = SubResource("RectangleShape2D_ubqif")
 wait_time = 3.0
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="GivingChance" to="." method="_on_giving_chance_timeout"]
-[connection signal="timeout" from="DisgustedTimer" to="." method="_on_disgusted_timer_timeout"]
 [connection signal="input_event" from="MouseInteraction" to="." method="_on_input_event"]
-[connection signal="mouse_entered" from="MouseInteraction" to="." method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="MouseInteraction" to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="Endgame" to="." method="_on_endgame_timeout"]

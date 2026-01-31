@@ -6,7 +6,7 @@ func reaction() -> void:
 
 func _on_giving_chance_timeout() -> void:
 	disgusted = true
-	disgusted_timer.start(3)
+	disgusted_timer.start(1.5)
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("interact") && selected:

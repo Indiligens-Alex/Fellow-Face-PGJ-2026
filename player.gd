@@ -47,11 +47,11 @@ func _on_man_npc_body_exited(body: Node2D) -> void:
 
 func interact():
 	interaction.emit()
-	unmask()
+	#unmask()
 func changeClothes(cloth:String):
 	match cloth:
 		"mask":
-			$Head.frame_coords.y = 1
+			$Head.frame_coords.y = 2
 		"tie":
 			$Body.frame_coords.y = 1
 		"shoes":

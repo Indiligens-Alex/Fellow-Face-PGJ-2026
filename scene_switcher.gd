@@ -17,7 +17,7 @@ func to_explanation():
 func to_main_menu():
 	switch_scene(main_menu.instantiate())
 func start_game():
-	switch_scene(test1.instantiate())
+	switch_scene(game.instantiate())
 func win():
 	switch_scene(win_screen.instantiate())
 func lose():
