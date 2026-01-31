@@ -789,4 +789,4 @@ position = Vector2(432, 224)
 position = Vector2(456, 224)
 
 [node name="CharacterBody2D" parent="." unique_id=226970753 instance=ExtResource("2_uaw4p")]
-position = Vector2(876, 300)
+position = Vector2(242, 161)

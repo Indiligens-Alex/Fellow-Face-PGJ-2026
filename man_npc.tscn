@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://7ebi7lwirsp4" path="res://man_npc.gd" id="1_6mhi7"]
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_nsuh6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nsuh6"]
-size = Vector2(12, 42)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mhi7"]
+radius = 35.0
 
-[node name="Man NPC" type="CharacterBody2D" unique_id=787066030]
+[node name="Man NPC" type="Area2D" unique_id=1927863307]
 script = ExtResource("1_6mhi7")
 
 [node name="Man" type="Sprite2D" parent="." unique_id=573814096]
@@ -16,12 +16,9 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("1_nsuh6")
 hframes = 4
 
-[node name="Area2D" type="Area2D" parent="." unique_id=2012237676]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2056230280]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_nsuh6")
-
 [node name="Cooldown Timer" type="Timer" parent="." unique_id=402413482]
 unique_name_in_owner = true
 one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056230280]
+shape = SubResource("CircleShape2D_6mhi7")

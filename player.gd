@@ -1,6 +1,6 @@
 extends CharacterBody2D
 var direction:Vector2 = Vector2.ZERO;
-var speed = 150;
+var speed = 15;
 
 func _physics_process(delta: float) -> void:
 	direction.x = Input.get_axis("left","right")
