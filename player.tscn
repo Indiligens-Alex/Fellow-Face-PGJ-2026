@@ -13,7 +13,7 @@ script = ExtResource("1_onrkg")
 position = Vector2(1.5, -13)
 shape = SubResource("RectangleShape2D_4flbx")
 
-[node name="ScaryMan" type="Sprite2D" parent="." unique_id=824839357]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=824839357]
 texture_filter = 1
 position = Vector2(2, -29)
 texture = ExtResource("2_onrkg")
