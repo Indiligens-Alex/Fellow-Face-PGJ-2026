@@ -13,6 +13,7 @@ script = ExtResource("1_6mhi7")
 texture_filter = 1
 position = Vector2(0.5, 0)
 texture = ExtResource("1_nsuh6")
+hframes = 4
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2012237676]
 
