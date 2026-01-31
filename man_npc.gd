@@ -1,4 +1,5 @@
 class_name NPC extends Area2D
+signal got_disgusted
 
 var disgusted: bool
 var destination: Vector2
@@ -8,7 +9,7 @@ var player: Player
 var selected = false
 var closeToPlayer = false
 @export var walk_time: float = 1
-@export var search_radius: float = 5
+@export var search_radius: float = 12
 @onready var cooldown_timer: Timer = %"Cooldown Timer"
 @onready var man: Sprite2D = %Man
 @onready var disgusted_timer: Timer = %DisgustedTimer
@@ -30,7 +31,7 @@ func walk_around() -> void:
 	if not disgusted: 
 		find_destination()
 		turn_sprite()
-		t.tween_property(self, "global_position", destination, walk_time)
+		t.tween_property(self, "global_position", destination, walk_time).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 		start_cooldown(false)
 	else:
 		turn_sprite_digusted()
@@ -133,6 +134,7 @@ func turn_sprite_digusted() -> void:
 			destination = global_position + Vector2(search_radius* [-1,1].pick_random(), -search_radius)*2
 	
 func reaction() -> void:
+	got_disgusted.emit()
 	disgusted = true
 	main.isolation += 5;
 	disgusted_timer.start(5)
