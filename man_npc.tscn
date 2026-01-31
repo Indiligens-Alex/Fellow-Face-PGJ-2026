@@ -12,6 +12,7 @@ shader_parameter/active = true
 radius = 35.0
 
 [node name="Man NPC" type="Area2D" unique_id=1927863307]
+y_sort_enabled = true
 script = ExtResource("1_6mhi7")
 
 [node name="Man" type="Sprite2D" parent="." unique_id=573814096]

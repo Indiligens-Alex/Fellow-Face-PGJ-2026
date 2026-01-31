@@ -1,3 +1,4 @@
 [gd_scene format=3 uid="uid://uh5i4whljh7f"]
 
 [node name="Special Person" type="CharacterBody2D" unique_id=1419157298]
+y_sort_enabled = true

@@ -3,7 +3,8 @@ signal unmasked
 
 var direction:Vector2 = Vector2.ZERO;
 
-@export var speed: float = 15
+@export var base_speed: float = 15
+var speed = base_speed
 @onready var sprite: Sprite2D = %Sprite
 
 func _physics_process(delta: float) -> void:
@@ -16,9 +17,8 @@ func _physics_process(delta: float) -> void:
 
 func unmask() -> void:
 	sprite.frame_coords.y = sprite.frame_coords.y-1
-	var curr_speed = speed
 	speed = 0
 	unmasked.emit()
 	await get_tree().create_timer(2).timeout
 	sprite.frame_coords.y = sprite.frame_coords.y+1
-	speed = curr_speed
+	speed = base_speed

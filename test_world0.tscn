@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="1_4mqmr"]
 [ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_uaw4p"]
 
-[node name="World" type="Node" unique_id=141377609]
+[node name="World" type="Node" unique_id=1342123251]
 
 [node name="Player" parent="." unique_id=226970753 instance=ExtResource("2_uaw4p")]
 position = Vector2(242, 161)
