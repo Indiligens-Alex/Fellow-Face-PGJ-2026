@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="PGJ 26"
+config/name="Fellow Face"
 run/main_scene="uid://d11ah3oqej4wa"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://b3f3npo06vjsd"
 
 [autoload]
 
