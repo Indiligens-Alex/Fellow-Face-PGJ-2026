@@ -8,11 +8,13 @@ var player_pos: Vector2
 var player: Player
 var selected = false
 var closeToPlayer = false
+
 @export var walk_time: float = 1
 @export var search_radius: float = 12
 @onready var cooldown_timer: Timer = %"Cooldown Timer"
 @onready var man: Sprite2D = %Man
 @onready var disgusted_timer: Timer = %DisgustedTimer
+@onready var tolerance: int = randi_range(0, 99)
 
 func _ready() -> void:
 	var rand_offset: Vector2 = Vector2(randf_range(-5, 5), randf_range(-2, 5.5))
@@ -134,10 +136,11 @@ func turn_sprite_digusted() -> void:
 			destination = global_position + Vector2(search_radius* [-1,1].pick_random(), -search_radius)*2
 	
 func reaction() -> void:
-	got_disgusted.emit()
-	disgusted = true
-	main.belonging += 5;
-	disgusted_timer.start(5)
+	if tolerance < 50:
+		got_disgusted.emit()
+		disgusted = true
+		main.belonging -= 5;
+		disgusted_timer.start(5)
 
 func _on_disgusted_timer_timeout() -> void:
 	disgusted = false
@@ -167,7 +170,7 @@ func _on_mouse_exited() -> void:
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("interact") && selected:
 		reaction()
-		print("i don't like you")
+		main.belonging -= 50
 
 func _on_body_entered(body: Node2D) -> void:
 	if main.player != null:

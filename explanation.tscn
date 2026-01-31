@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bdrvx76rs2uxr" path="res://art/example_click.png" id="4_62q08"]
 [ext_resource type="Texture2D" uid="uid://dx3x23tle2ps5" path="res://art/pc mouse.png" id="5_kmm38"]
 [ext_resource type="Script" uid="uid://bgl7whmckouef" path="res://skip_button.gd" id="6_da22i"]
+[ext_resource type="Texture2D" uid="uid://dmqtgtjjxofd6" path="res://art/main_character.png" id="7_vv614"]
 
 [node name="Explanation" type="Control" unique_id=406401592]
 layout_mode = 3
@@ -36,8 +37,9 @@ metadata/_edit_group_ = true
 layout_mode = 0
 offset_left = 15.0
 offset_top = -3.0
-offset_right = 55.0
-offset_bottom = 20.0
+offset_right = 33.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 18
 text = "W"
 
 [node name="Label2" type="Label" parent="Control" unique_id=1572035284]
@@ -46,6 +48,7 @@ offset_left = 4.0
 offset_top = 13.0
 offset_right = 44.0
 offset_bottom = 36.0
+theme_override_font_sizes/font_size = 18
 text = "A"
 
 [node name="Label3" type="Label" parent="Control" unique_id=860522963]
@@ -54,6 +57,7 @@ offset_left = 20.0
 offset_top = 13.0
 offset_right = 60.0
 offset_bottom = 36.0
+theme_override_font_sizes/font_size = 18
 text = "S"
 
 [node name="Label4" type="Label" parent="Control" unique_id=1620899882]
@@ -62,6 +66,7 @@ offset_left = 36.0
 offset_top = 13.0
 offset_right = 76.0
 offset_bottom = 36.0
+theme_override_font_sizes/font_size = 18
 text = "D"
 
 [node name="Label" type="Label" parent="." unique_id=238547612]
@@ -94,19 +99,19 @@ text = "- Find -"
 
 [node name="Label9" type="Label" parent="." unique_id=402755919]
 layout_mode = 0
-offset_left = 368.0
+offset_left = 360.0
 offset_top = 40.0
-offset_right = 424.0
+offset_right = 416.0
 offset_bottom = 63.0
 text = "- But -"
 
 [node name="Label4" type="Label" parent="." unique_id=622801236]
 layout_mode = 0
-offset_left = 19.0
-offset_top = 161.0
-offset_right = 225.0
-offset_bottom = 288.0
-scale = Vector2(0.75, 0.75)
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 178.0
+offset_bottom = 245.0
+theme_override_font_sizes/font_size = 12
 text = "Fun Items
 
 You find around The Map
@@ -118,9 +123,9 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 216.0
 offset_top = 72.0
-offset_right = 337.33334
-offset_bottom = 147.0
-scale = Vector2(0.75, 0.75)
+offset_right = 306.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 12
 text = "A person who
 will accept you
 without a mask"
@@ -131,20 +136,20 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 336.0
 offset_top = 184.0
-offset_right = 474.6667
-offset_bottom = 285.0
-scale = Vector2(0.75, 0.75)
+offset_right = 456.0
+offset_bottom = 250.0
+theme_override_font_sizes/font_size = 12
 text = "Only if you
 belive this person
 won't run away"
 
 [node name="Label16" type="Label" parent="." unique_id=1011963059]
 layout_mode = 0
-offset_left = 192.0
+offset_left = 200.0
 offset_top = 184.0
-offset_right = 320.0
-offset_bottom = 311.0
-scale = Vector2(0.75, 0.75)
+offset_right = 290.0
+offset_bottom = 261.0
+theme_override_font_sizes/font_size = 12
 text = "Left Click on
 someone to
 reveal yourself 
@@ -155,9 +160,9 @@ horizontal_alignment = 2
 layout_mode = 0
 offset_left = 344.0
 offset_top = 72.0
-offset_right = 568.0
-offset_bottom = 147.0
-scale = Vector2(0.75, 0.75)
+offset_right = 440.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 12
 text = "they look
 identical to the
 others in sociaty"
@@ -181,9 +186,9 @@ offset_bottom = 23.0
 [node name="Label10" type="Label" parent="." unique_id=1916580821]
 layout_mode = 0
 offset_left = 72.0
-offset_top = 140.0
+offset_top = 144.0
 offset_right = 128.0
-offset_bottom = 163.0
+offset_bottom = 167.0
 text = "- Use -"
 
 [node name="Label14" type="Label" parent="." unique_id=459996130]
@@ -210,8 +215,8 @@ texture = ExtResource("3_mb7is")
 hframes = 4
 
 [node name="ExampleClick" type="Sprite2D" parent="." unique_id=463528058]
-position = Vector2(312, 216)
-scale = Vector2(0.37499988, 0.37499988)
+position = Vector2(312.00003, 216.00002)
+scale = Vector2(0.37, 0.37)
 texture = ExtResource("4_62q08")
 
 [node name="PcMouse" type="Sprite2D" parent="." unique_id=521636449]
@@ -232,5 +237,12 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "Play"
 script = ExtResource("6_da22i")
+
+[node name="MainCharacter" type="Sprite2D" parent="." unique_id=591769711]
+position = Vector2(299, 216)
+texture = ExtResource("7_vv614")
+hframes = 4
+vframes = 2
+frame = 4
 
 [connection signal="pressed" from="Skip Button" to="Skip Button" method="_on_pressed"]
