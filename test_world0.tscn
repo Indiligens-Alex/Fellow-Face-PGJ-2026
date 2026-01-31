@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://d11ah3oqej4wa"]
 
 [ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="1_4mqmr"]
+[ext_resource type="Script" uid="uid://d3v1pwh7itink" path="res://test_world_0.gd" id="1_uaw4p"]
 [ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_uaw4p"]
 
 [node name="World" type="Node" unique_id=1342123251]
+script = ExtResource("1_uaw4p")
 
 [node name="Player" parent="." unique_id=226970753 instance=ExtResource("2_uaw4p")]
 z_index = 0
