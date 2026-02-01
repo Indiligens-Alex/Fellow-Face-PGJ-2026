@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dx3x23tle2ps5" path="res://art/pc mouse.png" id="5_kmm38"]
 [ext_resource type="Script" uid="uid://bgl7whmckouef" path="res://skip_button.gd" id="6_da22i"]
 [ext_resource type="Texture2D" uid="uid://dmqtgtjjxofd6" path="res://art/main_character.png" id="7_vv614"]
+[ext_resource type="Texture2D" uid="uid://3a0erplrsabj" path="res://art/shoes.png" id="8_n1cy5"]
 
 [node name="Explanation" type="Control" unique_id=406401592]
 layout_mode = 3
@@ -24,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -63.0
-offset_right = -130.0
-offset_bottom = -23.0
+offset_left = -200.0
+offset_top = -62.999992
+offset_right = -160.0
+offset_bottom = -22.999992
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.25, 1.25)
@@ -83,47 +84,71 @@ text = "Controls"
 
 [node name="Label2" type="Label" parent="." unique_id=337239901]
 layout_mode = 0
-offset_left = 54.0
+offset_left = 16.0
 offset_top = 40.0
-offset_right = 154.0
+offset_right = 116.0
 offset_bottom = 63.0
 text = "- Move with -"
 
 [node name="Label3" type="Label" parent="." unique_id=757834350]
 layout_mode = 0
-offset_left = 240.0
+offset_left = 184.0
 offset_top = 40.0
-offset_right = 296.0
+offset_right = 240.0
 offset_bottom = 63.0
 text = "- Find -"
 
 [node name="Label9" type="Label" parent="." unique_id=402755919]
 layout_mode = 0
-offset_left = 360.0
+offset_left = 344.0
 offset_top = 40.0
-offset_right = 416.0
+offset_right = 400.0
 offset_bottom = 63.0
 text = "- But -"
 
 [node name="Label4" type="Label" parent="." unique_id=622801236]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 168.0
-offset_right = 178.0
-offset_bottom = 245.0
+offset_left = -24.0
+offset_top = 171.0
+offset_right = 130.0
+offset_bottom = 248.0
 theme_override_font_sizes/font_size = 12
 text = "Fun Items
 
-You find around The Map
-To filter the society people"
+
+Around The Map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=561994104]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 169.0
+offset_right = 242.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 12
+text = "         to use items 
+and find out who
+can be your friend"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label17" type="Label" parent="." unique_id=1798093058]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 173.0
+offset_right = 139.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 18
+text = "E "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label12" type="Label" parent="." unique_id=861962144]
 layout_mode = 0
-offset_left = 216.0
+offset_left = 144.0
 offset_top = 72.0
-offset_right = 306.0
+offset_right = 234.0
 offset_bottom = 129.0
 theme_override_font_sizes/font_size = 12
 text = "A person who
@@ -134,25 +159,26 @@ vertical_alignment = 1
 
 [node name="Label15" type="Label" parent="." unique_id=994212489]
 layout_mode = 0
-offset_left = 336.0
+offset_left = 352.0
 offset_top = 184.0
-offset_right = 456.0
+offset_right = 472.0
 offset_bottom = 250.0
 theme_override_font_sizes/font_size = 12
-text = "Only if you
+text = "Do ONLY! if you
 belive this person
 won't run away"
 
 [node name="Label16" type="Label" parent="." unique_id=1011963059]
 layout_mode = 0
-offset_left = 200.0
-offset_top = 184.0
-offset_right = 290.0
-offset_bottom = 261.0
+offset_left = 184.0
+offset_top = 176.0
+offset_right = 303.0
+offset_bottom = 273.0
 theme_override_font_sizes/font_size = 12
-text = "Left Click on
+text = "L Click on
 someone to
-reveal yourself 
+show your
+true face 
 "
 horizontal_alignment = 2
 
@@ -185,11 +211,19 @@ offset_bottom = 23.0
 
 [node name="Label10" type="Label" parent="." unique_id=1916580821]
 layout_mode = 0
-offset_left = 72.0
+offset_left = 16.0
 offset_top = 144.0
-offset_right = 128.0
+offset_right = 93.0
 offset_bottom = 167.0
-text = "- Use -"
+text = "- Pick Up -"
+
+[node name="Label11" type="Label" parent="." unique_id=950149469]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 144.0
+offset_right = 192.0
+offset_bottom = 167.0
+text = "- Press -"
 
 [node name="Label14" type="Label" parent="." unique_id=459996130]
 layout_mode = 0
@@ -198,31 +232,6 @@ offset_top = 144.0
 offset_right = 353.0
 offset_bottom = 167.0
 text = "- Finaly -"
-
-[node name="Owo" type="Sprite2D" parent="." unique_id=604186842]
-position = Vector2(103.5, 198.5)
-scale = Vector2(2, 2)
-texture = ExtResource("2_mb7is")
-
-[node name="HotDogTie" type="Sprite2D" parent="." unique_id=472688282]
-position = Vector2(79.5, 198.5)
-scale = Vector2(3, 3)
-texture = ExtResource("1_5elfn")
-
-[node name="ScaryMan" type="Sprite2D" parent="." unique_id=1427623412]
-position = Vector2(322, 96)
-texture = ExtResource("3_mb7is")
-hframes = 4
-
-[node name="ExampleClick" type="Sprite2D" parent="." unique_id=463528058]
-position = Vector2(312.00003, 216.00002)
-scale = Vector2(0.37, 0.37)
-texture = ExtResource("4_62q08")
-
-[node name="PcMouse" type="Sprite2D" parent="." unique_id=521636449]
-position = Vector2(328, 216)
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("5_kmm38")
 
 [node name="Skip Button" type="Button" parent="." unique_id=722201461]
 layout_mode = 1
@@ -238,11 +247,52 @@ grow_vertical = 0
 text = "Play"
 script = ExtResource("6_da22i")
 
+[node name="Owo" type="Sprite2D" parent="." unique_id=604186842]
+position = Vector2(48.5, 209.5)
+scale = Vector2(2, 2)
+texture = ExtResource("2_mb7is")
+
+[node name="HotDogTie" type="Sprite2D" parent="." unique_id=472688282]
+position = Vector2(24.5, 209.5)
+scale = Vector2(3, 3)
+texture = ExtResource("1_5elfn")
+
+[node name="ScaryMan" type="Sprite2D" parent="." unique_id=1427623412]
+position = Vector2(289, 96)
+texture = ExtResource("3_mb7is")
+hframes = 4
+
+[node name="ScaryMan3" type="Sprite2D" parent="." unique_id=127637933]
+position = Vector2(313, 96)
+texture = ExtResource("3_mb7is")
+hframes = 4
+
+[node name="ScaryMan2" type="Sprite2D" parent="." unique_id=340494462]
+position = Vector2(265, 96)
+texture = ExtResource("3_mb7is")
+hframes = 4
+
+[node name="ExampleClick" type="Sprite2D" parent="." unique_id=463528058]
+position = Vector2(325.00003, 216.00002)
+scale = Vector2(0.37, 0.37)
+texture = ExtResource("4_62q08")
+
+[node name="PcMouse" type="Sprite2D" parent="." unique_id=521636449]
+position = Vector2(344, 216.00002)
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("5_kmm38")
+
 [node name="MainCharacter" type="Sprite2D" parent="." unique_id=591769711]
-position = Vector2(299, 216)
+position = Vector2(312, 216)
 texture = ExtResource("7_vv614")
 hframes = 4
 vframes = 2
 frame = 4
+
+[node name="Shoes" type="Sprite2D" parent="." unique_id=595329985]
+position = Vector2(75.25, 209.00002)
+scale = Vector2(1.2741935, 1.3333342)
+texture = ExtResource("8_n1cy5")
+hframes = 4
 
 [connection signal="pressed" from="Skip Button" to="Skip Button" method="_on_pressed"]
