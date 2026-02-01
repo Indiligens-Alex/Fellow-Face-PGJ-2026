@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://b78kox4w3imi3" path="res://special_person.gd" id="1_i6q8b"]
 [ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="1_prda0"]
 
-[node name="Man NPC" unique_id=1183907964 instance=ExtResource("1_prda0")]
+[node name="special" unique_id=1183907964 instance=ExtResource("1_prda0")]
 script = ExtResource("1_i6q8b")
+
+[node name="DisgustedTimer" parent="." index="4" unique_id=311554407]
+wait_time = 2.0
 
 [node name="Endgame" type="Timer" parent="." index="8" unique_id=1157352604]
 

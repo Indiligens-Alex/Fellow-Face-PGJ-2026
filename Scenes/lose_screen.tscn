@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bic5g8o6ucx2n"]
 
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_s2rrh"]
+[ext_resource type="Script" uid="uid://bgl7whmckouef" path="res://skip_button.gd" id="2_488pv"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=464420192]
 
@@ -30,3 +31,6 @@ offset_right = 317.0
 offset_bottom = 272.0
 theme_override_font_sizes/font_size = 41
 text = "try again"
+script = ExtResource("2_488pv")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

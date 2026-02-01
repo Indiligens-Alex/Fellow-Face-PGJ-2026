@@ -149,8 +149,8 @@ func turn_sprite_digusted() -> void:
 func reaction() -> void:
 	got_disgusted.emit()
 	disgusted = true
-	main.belonging -= 5;
-	disgusted_timer.start(3)
+	main.belonging -= 1;
+	disgusted_timer.start()
 	$ToleranceTimer.wait_time = tolerance/100 * 1.5
 
 func _on_disgusted_timer_timeout() -> void:
@@ -180,7 +180,10 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("interact") && selected:
+		selected = false
+		main.selected = false
 		reaction()
+		print("a",self)
 		main.belonging -= 50
 
 func _on_body_entered(body: Node2D) -> void:

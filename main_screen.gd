@@ -1,8 +1,7 @@
 extends Control
-
 @onready var start_button: Button = $"Start Button"
 @onready var skip_button: Button = $"Skip Button"
-
+ 
 @onready var label_3: Label = %Label3
 @onready var label_5: Label = %Label5
 @onready var label_6: Label = %Label6
@@ -23,6 +22,7 @@ func _ready() -> void:
 	label_7.hide()
 
 func _on_start_button_pressed() -> void:
+	main.SceneSwitcher.sounds.play()
 	label_2.hide()
 	label.hide()
 	start_button.hide()
@@ -39,4 +39,5 @@ func _on_start_button_pressed() -> void:
 	skip_button.text = "OK"
 
 func _on_skip_button_pressed() -> void:
+	main.SceneSwitcher.sounds.play()
 	main.SceneSwitcher.to_explanation()

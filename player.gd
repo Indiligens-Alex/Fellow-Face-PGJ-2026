@@ -12,6 +12,9 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	direction.x = Input.get_axis("left","right")
 	direction.y = Input.get_axis("up","down")
+	if(direction != Vector2.ZERO && main.SceneSwitcher.playSound):
+		main.SceneSwitcher.sounds.play()
+		main.SceneSwitcher.playSound = false
 	if direction.x == 1:
 		$Head.frame_coords.x = 1
 		$Body.frame_coords.x = 1

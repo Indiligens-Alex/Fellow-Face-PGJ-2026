@@ -1,10 +1,16 @@
 class_name SceneSwitcher extends Node2D
 @onready var music := $Music;
+@onready var sounds := $sounds
 const min:float= -60;
 const max:float= 0;
 var volume0 := min;
 var volume1 := max;
 var playing = false
+
+var playSound = true
+var clickSound =  preload("res://audio/menuclicksfx.wav")
+var walkSound =  preload("res://audio/steps.tres")
+
 var menutheme = preload("res://audio/menutheme.wav")
 var maintheme = preload("res://audio/playtheme.tres")
 var wintheme = preload("res://audio/winmusic.wav")
@@ -19,6 +25,7 @@ var win_screen =  preload("res://Scenes/win_screen.tscn")
 func _ready() -> void:
 	main.SceneSwitcher = self
 func switch_scene(scene):
+	print(get_child(0)," ",scene)
 	get_child(0).queue_free()
 	add_child(scene)
 	move_child(scene, 0)
@@ -29,18 +36,23 @@ func to_main_menu():
 	music.stream= menutheme
 	music.play()
 func start_game():
+	main.belonging = 100;
+	print("starting")
 	switch_scene(game.instantiate())
 	music.stream = maintheme
+	sounds.stream = walkSound
 	playing = true
 	music.play()
 func win():
 	switch_scene(win_screen.instantiate())
 	music.stream = wintheme
+	sounds.stream = clickSound
 	playing = false
 	music.play()
 func lose():
 	switch_scene(lose_screen.instantiate())
 	music.stream = losetheme
+	sounds.stream = clickSound
 	playing = false
 	music.play()
 
@@ -50,3 +62,7 @@ func _physics_process(delta: float) -> void:
 		volume1 = lerp(volume1,min,0.01)
 		$Music.stream.set_sync_stream_volume(0,volume0)
 		$Music.stream.set_sync_stream_volume(1,volume1)
+
+
+func _on_sounds_finished() -> void:
+	playSound = true

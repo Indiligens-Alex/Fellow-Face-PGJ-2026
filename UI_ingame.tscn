@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://ssg8uoppionq" path="res://ui_ingame.gd" id="1_y824o"]
 
 [node name="Control" type="Control" unique_id=911047087]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_y824o")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=137463461]
-self_modulate = Color(0.6627451, 0.84313726, 1, 1)
+self_modulate = Color(1, 0.18039216, 0.2901961, 1)
 layout_mode = 0
 offset_left = 23.0
 offset_top = 24.0
@@ -23,3 +22,13 @@ step = 1.0
 value = 83.0
 rounded = true
 fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1638049920]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 2.0
+offset_right = 232.78885
+offset_bottom = 25.0
+rotation = 1.5815386
+text = "rejection"
