@@ -15,7 +15,6 @@ script = ExtResource("1_y824o")
 [node name="Music" parent="." unique_id=1168137090 instance=ExtResource("1_vhm1o")]
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=137463461]
-modulate = Color(1, 1, 1, 0.52156866)
 self_modulate = Color(0.6627451, 0.84313726, 1, 1)
 layout_mode = 0
 offset_left = 23.0

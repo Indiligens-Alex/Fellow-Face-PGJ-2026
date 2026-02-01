@@ -1,4 +1,4 @@
 extends Control
 
 func _process(delta: float) -> void:
-	$ProgressBar.value = main.isolation
+	$ProgressBar.value = 100 - main.belonging

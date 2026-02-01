@@ -15,7 +15,7 @@ var originalPos:Vector2
 @onready var cooldown_timer: Timer = %"Cooldown Timer"
 @onready var man: Sprite2D = %Man
 @onready var disgusted_timer: Timer = %DisgustedTimer
-@onready var tolerance: int = randi_range(1, 100)
+@onready var tolerance: float = randf_range(1, 100)
 
 func _process(delta: float) -> void:
 	if destination.distance_to(global_position) > 10:
@@ -27,7 +27,10 @@ func _ready() -> void:
 	cooldown_timer.timeout.connect(walk_around)
 	$MouseInteraction.body_entered.connect(check_if_player)
 	walk_around()
-
+	set_tolerance()
+	
+func set_tolerance():
+	pass
 func check_if_player(node: Node2D) -> void:
 	#print(node.name)
 	if player != null && node.name == "Player":
