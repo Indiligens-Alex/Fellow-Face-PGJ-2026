@@ -3,7 +3,7 @@ signal interaction
 signal use_item
 
 @onready var head: Sprite2D = %Head
-@export var base_speed: float = 40
+@export var base_speed: float = 400
 var speed = base_speed
 var direction:Vector2 = Vector2.ZERO;
 var items: Array[bool] = [false, false, false]

@@ -8,7 +8,7 @@ var random_vector := Vector2.ZERO
 
 func _ready() -> void:
 	print(position)
-	for i in main.random.randi_range(10,30):
+	for i in main.random.randi_range(10,15):
 		spawn()
 func spawn():
 	random_vector = Vector2(main.random.randf_range(-radius,radius),main.random.randi_range(-radius,radius))

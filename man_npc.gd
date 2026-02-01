@@ -160,7 +160,7 @@ func _on_body_exited(body: Node2D) -> void:
 	if main.player != null:
 		if body == main.player:
 			closeToPlayer = false
-			main.player.interaction.disconnect(reaction)
+			#main.player.interaction.disconnect(reaction)
 			if selected == true:
 				$Man.set_instance_shader_parameter("active", false)
 				main.selected = false
@@ -192,6 +192,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if body == main.player:
 			closeToPlayer = true
 			main.player.use_item.connect(reaction)
+			#main.player.interaction.connect(reaction)
 
 func _on_tolerance_timer_timeout() -> void:
 	cooldown_timer.timeout.emit()

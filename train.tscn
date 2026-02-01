@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://ctkwwmftxe85"]
+
+[ext_resource type="Script" uid="uid://bk0ibqvvljumd" path="res://train.gd" id="2_e27fj"]
+[ext_resource type="Texture2D" uid="uid://cp8koju57g1aq" path="res://art/trainlocomotive.png" id="2_lomod"]
+[ext_resource type="Shader" uid="uid://ms6kroyxq86m" path="res://glow.gdshader" id="3_e27fj"]
+[ext_resource type="AudioStream" uid="uid://d2248oqh3cmhv" path="res://audio/toytrainbackgroundloop.wav" id="4_3bh8j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27ykc"]
+radius = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e27fj"]
+shader = ExtResource("3_e27fj")
+
+[sub_resource type="Animation" id="Animation_e27fj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_3bh8j"]
+resource_name = "move"
+length = 10.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9, 4, 5.5666666, 7.2, 8.8588, 10.233334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-81, 0), Vector2(-81, 47), Vector2(-102, 47), Vector2(-102, -55), Vector2(0, -55), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.9, 4.03, 5.55, 7.2076, 8.9376),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 2, 0, 1, 3, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ccrb"]
+_data = {
+&"RESET": SubResource("Animation_e27fj"),
+&"move": SubResource("Animation_3bh8j")
+}
+
+[node name="Node2D" type="Area2D" unique_id=1471419826 groups=["interactable"]]
+script = ExtResource("2_e27fj")
+texture = ExtResource("2_lomod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049295723]
+shape = SubResource("CircleShape2D_27ykc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1830604108]
+material = SubResource("ShaderMaterial_e27fj")
+texture = ExtResource("2_lomod")
+hframes = 4
+frame = 2
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1253447323]
+stream = ExtResource("4_3bh8j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1026215861]
+libraries/ = SubResource("AnimationLibrary_3ccrb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]
