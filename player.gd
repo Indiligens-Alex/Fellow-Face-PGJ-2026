@@ -1,10 +1,12 @@
 class_name Player extends CharacterBody2D
 signal interaction
+signal use_item
 
 @onready var head: Sprite2D = %Head
 @export var base_speed: float = 40
 var speed = base_speed
 var direction:Vector2 = Vector2.ZERO;
+var items: Array[bool] = [false, false, false]
 
 func _ready() -> void:
 	main.player = self
@@ -47,15 +49,29 @@ func unmask() -> void:
 func _on_man_npc_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
 
-
 func interact():
 	interaction.emit()
-	#unmask()
+
 func changeClothes(cloth:String):
 	match cloth:
 		"mask":
-			$Head.frame_coords.y = 2
+			items[0] = true
 		"tie":
-			$Body.frame_coords.y = 1
+			items[1] = true
 		"shoes":
+			items[2] = true
+
+func _input(event: InputEvent) -> void:
+	if event.is_action("use"):
+		if items[0]:
+			use_item.emit()
+			$Head.frame_coords.y = 2
+			items[0] = false
+		if items[1]:
+			use_item.emit()
+			$Body.frame_coords.y = 1
+			items[1] = false
+		if items[2]:
+			use_item.emit()
 			$Shoes.frame_coords.y = 1
+			items[2] = false

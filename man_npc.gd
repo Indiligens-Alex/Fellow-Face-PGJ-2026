@@ -34,7 +34,7 @@ func set_tolerance():
 func check_if_player(node: Node2D) -> void:
 	#print(node.name)
 	if player != null && node.name == "Player":
-		player.interaction.connect(reaction)
+		player.use_item.connect(reaction)
 
 func walk_around() -> void:
 	#var t: Tween = create_tween()
@@ -180,6 +180,7 @@ func _on_mouse_exited() -> void:
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if Input.is_action_just_pressed("interact") && selected:
+		main.player.unmask()
 		selected = false
 		main.selected = false
 		reaction()
@@ -190,8 +191,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if main.player != null:
 		if body == main.player:
 			closeToPlayer = true
-			main.player.interaction.connect(reaction)
-
+			main.player.use_item.connect(reaction)
 
 func _on_tolerance_timer_timeout() -> void:
 	cooldown_timer.timeout.emit()
