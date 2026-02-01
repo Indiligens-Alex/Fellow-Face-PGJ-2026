@@ -66,20 +66,14 @@ polygon = PackedVector2Array(0.31271738, -0.10656142, 0.27797103, 2.782437, -1.8
 [node name="Spawner4" parent="." unique_id=1246991079 instance=ExtResource("8_ngcqm")]
 position = Vector2(277, 520)
 radius = 75.0
-canFriend = true
-itemPointer = Vector2(358, 629)
 
 [node name="Spawner3" parent="." unique_id=2004993756 instance=ExtResource("8_ngcqm")]
 position = Vector2(238, 201)
 radius = 150.0
-canFriend = true
-itemPointer = Vector2(313, 64)
 
 [node name="Spawner6" parent="." unique_id=1083862119 instance=ExtResource("8_ngcqm")]
 position = Vector2(-154, 540)
 radius = 100.0
-canFriend = true
-itemPointer = Vector2(-280, 644)
 
 [node name="Spawner5" parent="." unique_id=1312378508 instance=ExtResource("8_ngcqm")]
 position = Vector2(-85, 170)
