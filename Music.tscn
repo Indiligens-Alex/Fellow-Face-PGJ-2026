@@ -1,9 +1,7 @@
 [gd_scene format=3 uid="uid://b0hdyyf0yv2ih"]
 
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_fbcf0"]
-stream_count = 2
-stream_0/volume = 0.0
-stream_1/volume = 0.0
+[ext_resource type="AudioStream" uid="uid://m6tgbai2qqke" path="res://audio/playtheme.tres" id="1_fw6bl"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1168137090]
-stream = SubResource("AudioStreamSynchronized_fbcf0")
+stream = ExtResource("1_fw6bl")
+autoplay = true
