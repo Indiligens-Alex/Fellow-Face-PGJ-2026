@@ -6,9 +6,6 @@
 [node name="special" unique_id=1183907964 instance=ExtResource("1_prda0")]
 script = ExtResource("1_i6q8b")
 
-[node name="DisgustedTimer" parent="." index="4" unique_id=311554407]
-wait_time = 2.0
-
 [node name="Endgame" type="Timer" parent="." index="8" unique_id=1157352604]
 
 [connection signal="timeout" from="Endgame" to="." method="_on_endgame_timeout"]

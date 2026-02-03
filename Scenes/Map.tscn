@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cnnp2nutpq17s" path="res://UI_ingame.tscn" id="9_ws1hi"]
 [ext_resource type="PackedScene" uid="uid://b35ovgaaivhtt" path="res://audio/deskhitbox.tscn" id="13_46meq"]
 [ext_resource type="PackedScene" uid="uid://ctkwwmftxe85" path="res://train.tscn" id="14_6bwvt"]
+[ext_resource type="PackedScene" uid="uid://dri6qstv1rdci" path="res://tie.tscn" id="15_q4yjo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bwvt"]
 texture = ExtResource("4_b7adt")
@@ -174,5 +175,8 @@ position = Vector2(160, 48)
 
 [node name="StaticBody2D13" parent="." unique_id=1318419747 instance=ExtResource("13_46meq")]
 position = Vector2(288, 49)
+
+[node name="Node2D6" parent="." unique_id=552065870 instance=ExtResource("15_q4yjo")]
+position = Vector2(245, 527)
 
 [editable path="Node2D2"]
