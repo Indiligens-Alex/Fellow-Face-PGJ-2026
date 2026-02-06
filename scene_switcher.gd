@@ -15,7 +15,7 @@ var menutheme = preload("res://audio/menutheme.wav")
 var maintheme = preload("res://audio/playtheme.tres")
 var wintheme = preload("res://audio/winmusic.wav")
 var losetheme = preload("res://audio/loosemusic.wav")
- 
+
 var main_menu = preload("res://Scenes/canvas_main_menu.tscn")
 var explanation = preload("res://Scenes/canvas_explanation.tscn")
 var game = preload("res://Scenes/Map.tscn")

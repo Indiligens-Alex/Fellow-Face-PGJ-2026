@@ -13,7 +13,6 @@ config_version=5
 config/name="Fellow Face"
 run/main_scene="uid://b1e4issy5eeup"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="uid://b3f3npo06vjsd"
 
 [autoload]
 
