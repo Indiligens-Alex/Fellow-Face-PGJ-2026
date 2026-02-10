@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://b0hh28e3vra4o"]
 
 [ext_resource type="Script" uid="uid://d0mesi5sr2mwf" path="res://spawner.gd" id="1_yp5lu"]
+[ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://Npcs/man_npc.tscn" id="2_mcln3"]
+[ext_resource type="PackedScene" uid="uid://bhqgytetkbcar" path="res://Npcs/special_person.tscn" id="3_bphdf"]
 
 [node name="Spawner" type="Node2D" unique_id=1246991079 groups=["spawner"]]
 script = ExtResource("1_yp5lu")
 radius = 50.0
+enemy = ExtResource("2_mcln3")
+friend = ExtResource("3_bphdf")

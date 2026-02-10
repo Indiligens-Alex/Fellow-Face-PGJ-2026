@@ -3,9 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://bq1vsbhc58hf2" path="res://Items/interactable.tscn" id="1_rfo3b"]
 
 [sub_resource type="GDScript" id="GDScript_2c11c"]
-script/source = "extends \"res://Items/interactable.gd\"
+script/source = "extends Interactable
 
 func interact():
+	super.interact()
 	main.player.changeClothes(\"tie\")
 "
 

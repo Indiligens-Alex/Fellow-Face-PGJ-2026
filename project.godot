@@ -34,7 +34,7 @@ folder_colors={
 "res://Player/": "orange",
 "res://Scenes/": "pink",
 "res://UIs/": "pink",
-"res://Wolrds & Levels/": "pink",
+"res://Worlds & Levels/": "pink",
 "res://art/": "green",
 "res://audio/": "teal"
 }

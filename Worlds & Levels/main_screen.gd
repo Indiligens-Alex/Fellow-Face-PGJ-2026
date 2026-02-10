@@ -1,7 +1,8 @@
 extends Control
+
 @onready var start_button: Button = $"Start Button"
 @onready var skip_button: Button = $"Skip Button"
- 
+
 @onready var label_3: Label = %Label3
 @onready var label_5: Label = %Label5
 @onready var label_6: Label = %Label6

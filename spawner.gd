@@ -1,9 +1,10 @@
 extends Node2D
-@export var radius:float
+@export var radius: float
 #@export var canFriend:bool;
 #@export var itemPointer:Vector2
-var enemy:=  preload("res://man_npc.tscn")
-var friend:=  preload("res://special_person.tscn")
+@export var enemy: PackedScene
+@export var friend: PackedScene
+
 var random_vector := Vector2.ZERO
 
 func _ready() -> void:
@@ -15,6 +16,7 @@ func spawn():
 	var instance = enemy.instantiate()
 	instance.position = position + random_vector
 	get_parent().add_child.call_deferred(instance)
+
 func spawn_friend():
 	random_vector = Vector2(main.random.randf_range(-radius,radius),main.random.randi_range(-radius,radius))
 	var instance = friend.instantiate()

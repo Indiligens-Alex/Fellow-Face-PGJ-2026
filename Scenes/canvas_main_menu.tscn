@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dx2qcjbqju3sj"]
 
-[ext_resource type="PackedScene" uid="uid://dt3gxy7kk87wx" path="res://main_screen.tscn" id="1_a6rsl"]
+[ext_resource type="PackedScene" uid="uid://dt3gxy7kk87wx" path="res://Worlds & Levels/main_screen.tscn" id="1_a6rsl"]
+
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1843432261]
 

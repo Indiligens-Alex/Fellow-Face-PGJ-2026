@@ -1,11 +1,13 @@
 class_name SceneSwitcher extends Node2D
-@onready var music := $Music;
+@onready var music := $Music
 @onready var sounds := $sounds
-const min:float= -60;
-const max:float= 0;
-var volume0 := min;
-var volume1 := max;
-var playing = false
+
+const MIN: float= -60;
+const MAX: float= 0
+var volume0 := MIN
+var volume1 := MAX
+
+var playing: bool = false
 
 var playSound = true
 var clickSound =  preload("res://audio/menuclicksfx.wav")
@@ -16,12 +18,13 @@ var maintheme = preload("res://audio/playtheme.tres")
 var wintheme = preload("res://audio/winmusic.wav")
 var losetheme = preload("res://audio/loosemusic.wav")
 
-var main_menu = preload("res://Scenes/canvas_main_menu.tscn")
-var explanation = preload("res://Scenes/canvas_explanation.tscn")
-var game = preload("res://Scenes/Map.tscn")
-var lose_screen =  preload("res://Scenes/lose_screen.tscn")
-var test1 =  preload("res://testWorld1.tscn")
-var win_screen =  preload("res://Scenes/win_screen.tscn")
+@export var main_menu: PackedScene = preload("res://Scenes/canvas_main_menu.tscn")
+@export var explanation: PackedScene = preload("res://Scenes/canvas_explanation.tscn")
+@export var game: PackedScene = preload("res://Scenes/Map.tscn")
+@export var lose_screen: PackedScene
+@export var test1: PackedScene
+@export var win_screen: PackedScene
+
 func _ready() -> void:
 	main.SceneSwitcher = self
 func switch_scene(scene):
@@ -58,8 +61,8 @@ func lose():
 
 func _physics_process(delta: float) -> void:
 	if main.belonging <= 50 && playing:
-		volume0 = lerp(volume0,max,0.01)
-		volume1 = lerp(volume1,min,0.01)
+		volume0 = lerp(volume0,MAX,0.01)
+		volume1 = lerp(volume1,MIN,0.01)
 		$Music.stream.set_sync_stream_volume(0,volume0)
 		$Music.stream.set_sync_stream_volume(1,volume1)
 

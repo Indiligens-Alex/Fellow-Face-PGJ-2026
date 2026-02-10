@@ -1,4 +1,4 @@
-extends Area2D
+class_name Interactable extends Area2D
 
 var interacting:bool = false;
 @export var changeClothes:bool = false;
