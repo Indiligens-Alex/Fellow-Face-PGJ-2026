@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bic5g8o6ucx2n"]
 
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_s2rrh"]
-[ext_resource type="Script" uid="uid://bgl7whmckouef" path="res://skip_button.gd" id="2_488pv"]
+[ext_resource type="Script" uid="uid://bgl7whmckouef" path="res://UIs/skip_button.gd" id="2_488pv"]
+
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=464420192]
 

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://betx7hsbnaaxl"]
 
-[ext_resource type="PackedScene" uid="uid://bq1vsbhc58hf2" path="res://interactable.tscn" id="1_eh0h2"]
-[ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_xslxd"]
-[ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="3_xslxd"]
-[ext_resource type="PackedScene" uid="uid://bhqgytetkbcar" path="res://special_person.tscn" id="4_vn0e8"]
+[ext_resource type="PackedScene" uid="uid://bq1vsbhc58hf2" path="res://Items/interactable.tscn" id="1_eh0h2"]
+[ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://Player/player.tscn" id="2_xslxd"]
+[ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://Npcs/man_npc.tscn" id="3_xslxd"]
+[ext_resource type="PackedScene" uid="uid://bhqgytetkbcar" path="res://Npcs/special_person.tscn" id="4_vn0e8"]
 [ext_resource type="Texture2D" uid="uid://c1g5dqmaprevx" path="res://art/hotDogTie.png" id="5_frimb"]
+
 
 [node name="Node2D" type="Node2D" unique_id=1946616107]
 

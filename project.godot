@@ -26,6 +26,19 @@ window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[file_customization]
+
+folder_colors={
+"res://Items/": "teal",
+"res://Npcs/": "orange",
+"res://Player/": "orange",
+"res://Scenes/": "pink",
+"res://UIs/": "pink",
+"res://Wolrds & Levels/": "pink",
+"res://art/": "green",
+"res://audio/": "teal"
+}
+
 [global_group]
 
 interactable=""

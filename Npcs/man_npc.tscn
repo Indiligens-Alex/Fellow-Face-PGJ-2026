@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bl24rai8resv5"]
 
-[ext_resource type="Script" uid="uid://7ebi7lwirsp4" path="res://man_npc.gd" id="1_6mhi7"]
+[ext_resource type="Script" uid="uid://7ebi7lwirsp4" path="res://Npcs/man_npc.gd" id="1_6mhi7"]
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_nsuh6"]
-[ext_resource type="Shader" uid="uid://c1xvfnqfulch5" path="res://glowPeople.gdshader" id="2_ubqif"]
+[ext_resource type="Shader" uid="uid://c1xvfnqfulch5" path="res://Shaders/glowPeople.gdshader" id="2_ubqif"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2b317"]
 size = Vector2(16, 25)

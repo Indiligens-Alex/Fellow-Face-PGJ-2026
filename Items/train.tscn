@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://ctkwwmftxe85"]
 
-[ext_resource type="Script" uid="uid://bk0ibqvvljumd" path="res://train.gd" id="2_e27fj"]
+[ext_resource type="Script" uid="uid://bk0ibqvvljumd" path="res://Items/train.gd" id="2_e27fj"]
 [ext_resource type="Texture2D" uid="uid://cp8koju57g1aq" path="res://art/trainlocomotive.png" id="2_lomod"]
-[ext_resource type="Shader" uid="uid://ms6kroyxq86m" path="res://glow.gdshader" id="3_e27fj"]
+[ext_resource type="Shader" uid="uid://ms6kroyxq86m" path="res://Shaders/glow.gdshader" id="3_e27fj"]
 [ext_resource type="AudioStream" uid="uid://d2248oqh3cmhv" path="res://audio/toytrainbackgroundloop.wav" id="4_3bh8j"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27ykc"]
 radius = 20.0
