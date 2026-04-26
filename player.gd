@@ -63,6 +63,7 @@ func changeClothes(cloth:String):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("use"):
+		print("use")
 		if items[0]:
 			use_item.emit()
 			$Head.frame_coords.y = 2

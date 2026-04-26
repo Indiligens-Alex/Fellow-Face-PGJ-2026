@@ -113,6 +113,8 @@ position = Vector2(274, 648)
 [node name="Camera2D" type="Camera2D" parent="Node2D4/Player" unique_id=119988909]
 
 [node name="Control" parent="Node2D4/Player" unique_id=911047087 instance=ExtResource("9_ws1hi")]
+z_index = 2
+z_as_relative = false
 offset_left = -206.0
 offset_top = -150.0
 offset_right = -206.0

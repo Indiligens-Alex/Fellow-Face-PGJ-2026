@@ -1,6 +1,8 @@
 class_name NPC extends CharacterBody2D
 signal got_disgusted
 
+enum States{WANDERING, DISGUSTED,TASK,GOING};
+var state:States = States.WANDERING;
 var speed:float = 30
 var disgusted: bool
 var destination: Vector2
@@ -18,14 +20,23 @@ var originalPos:Vector2
 @onready var tolerance: float = randf_range(1, 100)
 
 func _process(delta: float) -> void:
-	if destination.distance_to(global_position) > 10:
-		move_and_slide()
+	match state:
+		States.WANDERING:
+			#print(dir)
+			if destination.distance_to(global_position) > 10:
+				move_and_slide()
+			elif cooldown_timer.is_stopped():
+				#print("wandered")
+				start_cooldown(false)
+		States.DISGUSTED:
+				move_and_slide()
 func _ready() -> void:
+	$ToleranceTimer.wait_time = tolerance/100 * 1.5
 	originalPos = position
 	var rand_offset: Vector2 = Vector2(randf_range(-5, 5), randf_range(-2, 5.5))
 	position += rand_offset
 	cooldown_timer.timeout.connect(walk_around)
-	$MouseInteraction.body_entered.connect(check_if_player)
+	#$playerClose.body_entered.connect(check_if_player)
 	walk_around()
 	set_tolerance()
 	
@@ -33,23 +44,21 @@ func set_tolerance():
 	pass
 func check_if_player(node: Node2D) -> void:
 	#print(node.name)
-	if player != null && node.name == "Player":
-		player.use_item.connect(reaction)
+	print(3)
+	if main.player != null && node.name == "Player" && !main.player.use_item.is_connected($ToleranceTimer.start):
+		main.player.use_item.connect($ToleranceTimer.start)
 
 func walk_around() -> void:
-	#var t: Tween = create_tween()
-	if not disgusted: 
-		find_destination()
-		turn_sprite()
-		#t.tween_property(self, "global_position", destination, walk_time).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
-		velocity = speed*dir
-		start_cooldown(false)
-	else:
-		turn_sprite_digusted()
-		#t.tween_property(self, "global_position", destination, walk_time/2)
-		velocity = speed*dir
-		move_and_slide()
-		start_cooldown(true)
+	find_destination()
+	turn_sprite()
+	velocity = speed*dir
+	#print(dir)
+	#elif state == States.DISGUSTED:
+		#turn_sprite_digusted()
+		##t.tween_property(self, "global_position", destination, walk_time/2)
+		#velocity = speed*dir
+		#move_and_slide()
+		#start_cooldown(true)
 
 func find_destination() -> void:
 	var min_x := originalPos.x-50
@@ -95,23 +104,23 @@ func turn_sprite() -> void:
 
 	if abs_cos > abs_sin: # if direction is mostly to the right
 		if cos_angle > 0:
-			dir_name = "right"
+			man.frame = 1#right
 		else:
-			dir_name = "left"
+			man.frame = 2#left
 	else:
 		if sin_angle < 0:
-			dir_name = "up"
+			man.frame = 3#up
 		else:
-			dir_name = "down"
-	match dir_name:
-		"down":
-			man.frame = 0
-		"right":
-			man.frame = 1
-		"left":
-			man.frame = 2
-		"up":
-			man.frame = 3
+			man.frame = 0#down
+	#match dir_name:
+		#"down":
+			#man.frame = 0
+		#"right":
+			#man.frame = 1
+		#"left":
+			#man.frame = 2
+		#"up":
+			#man.frame = 3
 
 func turn_sprite_digusted() -> void:
 	dir = (global_position - main.player.global_position).normalized()
@@ -135,32 +144,36 @@ func turn_sprite_digusted() -> void:
 	match dir_name:
 		"down":
 			man.frame = 0
-			destination = global_position + Vector2(search_radius* [-1,1].pick_random(), search_radius)*2
+			#destination = global_position + Vector2(search_radius* [-1,1].pick_random(), search_radius)*2
 		"right":
 			man.frame = 1
-			destination = global_position + Vector2(search_radius, search_radius * [-1,1].pick_random())*2
+			#destination = global_position + Vector2(search_radius, search_radius * [-1,1].pick_random())*2
 		"left":
 			man.frame = 2
-			destination = global_position + Vector2(-search_radius, search_radius * [-1,1].pick_random())*2
+			#destination = global_position + Vector2(-search_radius, search_radius * [-1,1].pick_random())*2
 		"up":
 			man.frame = 3
-			destination = global_position + Vector2(search_radius* [-1,1].pick_random(), -search_radius)*2
+			#destination = global_position + Vector2(search_radius* [-1,1].pick_random(), -search_radius)*2
 	
 func reaction() -> void:
 	got_disgusted.emit()
-	disgusted = true
+	state = States.DISGUSTED;
 	main.belonging -= 1;
+	turn_sprite_digusted()
+	velocity = speed*dir
 	disgusted_timer.start()
-	$ToleranceTimer.wait_time = tolerance/100 * 1.5
 
 func _on_disgusted_timer_timeout() -> void:
-	disgusted = false
+	#change state
+	velocity = Vector2.ZERO
+	state = States.WANDERING
 
 func _on_body_exited(body: Node2D) -> void:
 	if main.player != null:
 		if body == main.player:
 			closeToPlayer = false
-			#main.player.interaction.disconnect(reaction)
+			if main.player.use_item.is_connected($ToleranceTimer.start):
+				main.player.use_item.disconnect($ToleranceTimer.start)
 			if selected == true:
 				$Man.set_instance_shader_parameter("active", false)
 				main.selected = false
@@ -189,10 +202,11 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if main.player != null:
-		if body == main.player:
+		if body == main.player && !main.player.use_item.is_connected($ToleranceTimer.start):
 			closeToPlayer = true
-			main.player.use_item.connect(reaction)
+			main.player.use_item.connect($ToleranceTimer.start)
 			#main.player.interaction.connect(reaction)
 
 func _on_tolerance_timer_timeout() -> void:
-	cooldown_timer.timeout.emit()
+	print(1)
+	reaction()

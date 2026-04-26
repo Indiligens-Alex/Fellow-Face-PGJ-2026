@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dxwd1ynwkob6u"]
+
+[ext_resource type="Script" uid="uid://cl0hftwa568cq" path="res://corridor.gd" id="1_jm2rx"]
+
+[node name="corridor" type="Node2D" unique_id=1020608659]
+script = ExtResource("1_jm2rx")
+
+[node name="up" type="Node2D" parent="." unique_id=2055965378]
+y_sort_enabled = true
+
+[node name="down" type="Node2D" parent="." unique_id=934548937]
+y_sort_enabled = true
