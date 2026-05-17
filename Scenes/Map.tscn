@@ -14,7 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://cnnp2nutpq17s" path="res://UI_ingame.tscn" id="9_ws1hi"]
 [ext_resource type="PackedScene" uid="uid://b35ovgaaivhtt" path="res://audio/deskhitbox.tscn" id="13_46meq"]
 [ext_resource type="PackedScene" uid="uid://ctkwwmftxe85" path="res://train.tscn" id="14_6bwvt"]
+[ext_resource type="PackedScene" uid="uid://baca4kv8lbdhh" path="res://corridor.tscn" id="15_6hulr"]
+[ext_resource type="Script" uid="uid://33iom77rh0a5" path="res://Scenes/corridor_algorithm.gd" id="15_ejakq"]
 [ext_resource type="PackedScene" uid="uid://dri6qstv1rdci" path="res://tie.tscn" id="15_q4yjo"]
+[ext_resource type="PackedScene" uid="uid://o4m3u505g72e" path="res://break.tscn" id="16_ejakq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bwvt"]
 texture = ExtResource("4_b7adt")
@@ -178,7 +181,54 @@ position = Vector2(160, 48)
 [node name="StaticBody2D13" parent="." unique_id=1318419747 instance=ExtResource("13_46meq")]
 position = Vector2(288, 49)
 
-[node name="Node2D6" parent="." unique_id=552065870 instance=ExtResource("15_q4yjo")]
+[node name="Node2D7" type="Node2D" parent="." unique_id=2104365378]
 position = Vector2(245, 527)
+script = ExtResource("15_ejakq")
+save = true
+
+[node name="corridor" parent="Node2D7" unique_id=803036611 instance=ExtResource("15_6hulr")]
+position = Vector2(-372, -323)
+scale = Vector2(59, 18)
+
+[node name="breaks" type="Node2D" parent="Node2D7/corridor" unique_id=429125565]
+
+[node name="break2" parent="Node2D7/corridor/breaks" unique_id=1009700267 node_paths=PackedStringArray("corridor") instance=ExtResource("16_ejakq")]
+position = Vector2(6.322034, -7.2777767)
+rotation = 1.5707964
+scale = Vector2(0.2777778, 0.016949153)
+corridor = NodePath("../../../corridor1")
+
+[node name="break" parent="Node2D7/corridor/breaks" unique_id=582261036 node_paths=PackedStringArray("corridor") instance=ExtResource("16_ejakq")]
+position = Vector2(-0.91525435, -7.222222)
+rotation = 1.5707964
+scale = Vector2(0.2777778, 0.016949153)
+corridor = NodePath("../../../corridor2")
+
+[node name="corridor1" parent="Node2D7" unique_id=1020608659 instance=ExtResource("15_6hulr")]
+position = Vector2(37, 33)
+scale = Vector2(11, 16)
+id = 1
+
+[node name="breaks" type="Node2D" parent="Node2D7/corridor1" unique_id=314257512]
+
+[node name="break" parent="Node2D7/corridor1/breaks" unique_id=492398962 node_paths=PackedStringArray("corridor") instance=ExtResource("16_ejakq")]
+position = Vector2(-7.181818, -10.625)
+scale = Vector2(0.27272728, 0.0625)
+corridor = NodePath("../../../corridor")
+
+[node name="corridor2" parent="Node2D7" unique_id=187824289 instance=ExtResource("15_6hulr")]
+position = Vector2(-395, 56)
+scale = Vector2(16, 19)
+id = 2
+
+[node name="breaks" type="Node2D" parent="Node2D7/corridor2" unique_id=2018752246]
+
+[node name="break2" parent="Node2D7/corridor2/breaks" unique_id=1210267635 node_paths=PackedStringArray("corridor") instance=ExtResource("16_ejakq")]
+position = Vector2(-6.875, -10.157894)
+scale = Vector2(0.27, 0.053)
+corridor = NodePath("../../../corridor")
+
+[node name="Node2D6" parent="." unique_id=552065870 instance=ExtResource("15_q4yjo")]
+position = Vector2(240, 529)
 
 [editable path="Node2D2"]

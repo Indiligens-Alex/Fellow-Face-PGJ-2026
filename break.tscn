@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://o4m3u505g72e"]
+
+[ext_resource type="Script" uid="uid://po2svjifkc4o" path="res://break.gd" id="1_oj86i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2kp73"]
+size = Vector2(72, 16)
+
+[node name="break" type="Area2D" unique_id=1009700267]
+script = ExtResource("1_oj86i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1765234337]
+position = Vector2(26, 2)
+shape = SubResource("RectangleShape2D_2kp73")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
