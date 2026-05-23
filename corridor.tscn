@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cl0hftwa568cq" path="res://corridor.gd" id="1_jm2rx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jm2rx"]
-
-[node name="corridor" type="Node2D" unique_id=1020608659 groups=["corridor"]]
+[node name="corridor" type="Node2D" unique_id=1020608659]
 script = ExtResource("1_jm2rx")
 
 [node name="up" type="Node2D" parent="." unique_id=2055965378]
@@ -12,9 +10,3 @@ y_sort_enabled = true
 
 [node name="down" type="Node2D" parent="." unique_id=934548937]
 y_sort_enabled = true
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1463786988]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1145769862]
-shape = SubResource("RectangleShape2D_jm2rx")
-debug_color = Color(5.053729e-07, 0.6473928, 0.2206395, 0.41960785)

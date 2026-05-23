@@ -22,7 +22,6 @@ var originalPos:Vector2
 @onready var tolerance: float = randf_range(1, 100)
 
 func _process(delta: float) -> void:
-	print(dir)
 	match state:
 		States.WANDERING:
 			#print(dir)
@@ -39,6 +38,8 @@ func _process(delta: float) -> void:
 		States.TRANSITION:
 			move_and_slide()
 			if global_position.distance_to(destination) < 10:
+				print("to corridor")
+				next_location()
 				state = States.CORRIDOR
 func _ready() -> void:
 	for area in $MouseInteraction.get_overlapping_areas():
@@ -226,13 +227,18 @@ func _on_tolerance_timer_timeout() -> void:
 	reaction()
 func next_location():
 	print("next")
-	var next:int = -1;
+	next = -1;
 	var min = main.map.distance[corridor][goal]-1;
 	print("map ",corridor,": ",main.map.distance[corridor], " min:", min, " goal: ", goal)
 	for i in main.map.distance[corridor].size():
 		if  main.map.distance[corridor][i] == 1 && main.map.distance[i][goal] == min:
 			next = i;
 			break;
+	if next == -1:
+		print("reached")
+		dir = Vector2.ZERO
+		velocity = dir*speed
+		return
 	var next_corridor = main.corridors[corridor]
 	print("corridor ",corridor," ",next," ",goal);
 	if main.map.distance[corridor][next] != 0:
@@ -257,15 +263,15 @@ func next_location():
 
 
 func _on_mouse_interaction_area_entered(area: Area2D) -> void:
-	print("in")
+	if(area.is_in_group("break")):
+		print("in",area.corridor.id, next)
 	if area.is_in_group("break") && area.corridor.id == next:
 		#move to pos
+		corridor = area.corridor.id
 		print("trans ",area.pos)
 		destination = area.pos
 		state = States.TRANSITION
-		#dir = global_position.direction_to(area.pos)
-		corridor = area.corridor.id
-		next_location()
-		pass
+		dir = global_position.direction_to(area.pos)
+		velocity = dir*speed
 	#elif area.get_parent().is_in_group("corridor"):
 		#corridor = area.get_parent().id
