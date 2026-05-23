@@ -6,6 +6,7 @@ var direction:Vector2 = Vector2.UP;
 @onready var down = $down;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	main.corridors[id] = self;
 	if horizontal:
 		direction = Vector2.RIGHT
 

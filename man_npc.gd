@@ -1,8 +1,10 @@
 class_name NPC extends CharacterBody2D
 signal got_disgusted
-
-enum States{WANDERING, DISGUSTED,TASK,GOING};
-var state:States = States.WANDERING;
+var corridor:int = -1;
+var goal:int;
+var next:int;
+enum States{WANDERING, DISGUSTED,TASK,CORRIDOR,TRANSITION};
+var state:States = States.CORRIDOR;
 var speed:float = 30
 var disgusted: bool
 var destination: Vector2
@@ -20,6 +22,7 @@ var originalPos:Vector2
 @onready var tolerance: float = randf_range(1, 100)
 
 func _process(delta: float) -> void:
+	print(state)
 	match state:
 		States.WANDERING:
 			#print(dir)
@@ -30,11 +33,22 @@ func _process(delta: float) -> void:
 				start_cooldown(false)
 		States.DISGUSTED:
 				move_and_slide()
+				
+		States.CORRIDOR:
+			move_and_slide()
+		States.TRANSITION:
+			move_and_slide()
+			if global_position.direction_to(destination):
+				state = States.CORRIDOR
 func _ready() -> void:
+	for area in $MouseInteraction.get_overlapping_areas():
+		_on_mouse_interaction_area_entered(area)
+	goal = main.random.randi_range(0,2)
+	next_location()
 	$ToleranceTimer.wait_time = tolerance/100 * 1.5
-	originalPos = position
+	originalPos = global_position
 	var rand_offset: Vector2 = Vector2(randf_range(-5, 5), randf_range(-2, 5.5))
-	position += rand_offset
+	global_position += rand_offset
 	cooldown_timer.timeout.connect(walk_around)
 	#$playerClose.body_entered.connect(check_if_player)
 	walk_around()
@@ -210,3 +224,43 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_tolerance_timer_timeout() -> void:
 	print(1)
 	reaction()
+func next_location():
+	print("next")
+	var next:int;
+	var min = main.map.distance[corridor][goal]-1;
+	for i in main.map.distance[corridor].size():
+		if  main.map.distance[corridor][i] == 1 && main.map.distance[i][goal] == min:
+			next = i;
+			break;
+	var next_corridor = main.corridors[next]
+	if main.map.distance[corridor][next] != -1:
+		if next_corridor.horizontal:
+			if main.map.breaks[corridor][next].x > global_position.x:
+				#next_corridor.get_node("up").add_child(self)
+				dir = Vector2.RIGHT
+			else:
+				dir= Vector2.LEFT
+				#next_corridor.get_node("down").add_child(self)
+		else:
+			if main.map.breaks[corridor][next].y > global_position.y:
+				dir = Vector2.DOWN
+				#next_corridor.get_node("up").add_child(self)
+			else:
+				dir = Vector2.UP
+			#next_corridor.get_node("down").add_child(self)
+	#push_error("map error next_location")
+
+
+func _on_mouse_interaction_area_entered(area: Area2D) -> void:
+	print("in")
+	if area.is_in_group("break") && area.corridor.id == next:
+		#move to pos
+		print("trans")
+		destination = area.pos
+		state = States.TRANSITION
+		dir = global_position.direction_to(area.pos)
+		corridor = area.corridor.id
+		next_location()
+		pass
+	elif area.get_parent().is_in_group("corridor"):
+		corridor = area.get_parent().id
