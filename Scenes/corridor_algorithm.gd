@@ -13,9 +13,9 @@ func _ready() -> void:
 			var j:Array
 			var k:Array
 			j.resize(get_children().size())
-			j.fill(-1)
+			j.fill(0)
 			k.resize(get_children().size())
-			k.fill(-1)
+			k.fill(0)
 			distanceMatrix.append(j)
 			breakMatrix.append(k)
 		#print(2)

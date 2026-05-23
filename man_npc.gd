@@ -1,14 +1,14 @@
 class_name NPC extends CharacterBody2D
 signal got_disgusted
 var corridor:int = -1;
-var goal:int;
+var goal:int = main.random.randi_range(0,2);
 var next:int;
 enum States{WANDERING, DISGUSTED,TASK,CORRIDOR,TRANSITION};
 var state:States = States.CORRIDOR;
 var speed:float = 30
 var disgusted: bool
 var destination: Vector2
-var dir: Vector2
+var dir: Vector2 = Vector2.ZERO
 var player_pos: Vector2
 var player: Player
 var selected = false
@@ -22,6 +22,7 @@ var originalPos:Vector2
 @onready var tolerance: float = randf_range(1, 100)
 
 func _process(delta: float) -> void:
+	print(dir)
 	match state:
 		States.WANDERING:
 			#print(dir)
@@ -42,7 +43,6 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	for area in $MouseInteraction.get_overlapping_areas():
 		_on_mouse_interaction_area_entered(area)
-	goal = main.random.randi_range(0,2)
 	next_location()
 	$ToleranceTimer.wait_time = tolerance/100 * 1.5
 	originalPos = global_position
@@ -50,7 +50,7 @@ func _ready() -> void:
 	global_position += rand_offset
 	cooldown_timer.timeout.connect(walk_around)
 	#$playerClose.body_entered.connect(check_if_player)
-	walk_around()
+	#walk_around()
 	set_tolerance()
 	
 func set_tolerance():
@@ -226,15 +226,16 @@ func _on_tolerance_timer_timeout() -> void:
 	reaction()
 func next_location():
 	print("next")
-	var next:int;
+	var next:int = -1;
 	var min = main.map.distance[corridor][goal]-1;
+	print("map ",corridor,": ",main.map.distance[corridor], " min:", min, " goal: ", goal)
 	for i in main.map.distance[corridor].size():
 		if  main.map.distance[corridor][i] == 1 && main.map.distance[i][goal] == min:
 			next = i;
 			break;
 	var next_corridor = main.corridors[corridor]
-	print("corridor ",corridor);
-	if main.map.distance[corridor][next] != -1:
+	print("corridor ",corridor," ",next," ",goal);
+	if main.map.distance[corridor][next] != 0:
 		if next_corridor.horizontal:
 			if main.map.breaks[corridor][next].x > global_position.x:
 				#next_corridor.get_node("up").add_child(self)
@@ -249,6 +250,7 @@ func next_location():
 			else:
 				dir = Vector2.UP
 				
+		velocity = dir*speed
 		print("shmove ",dir)
 			#next_corridor.get_node("down").add_child(self)
 	#push_error("map error next_location")
@@ -261,9 +263,9 @@ func _on_mouse_interaction_area_entered(area: Area2D) -> void:
 		print("trans ",area.pos)
 		destination = area.pos
 		state = States.TRANSITION
-		dir = global_position.direction_to(area.pos)
+		#dir = global_position.direction_to(area.pos)
 		corridor = area.corridor.id
 		next_location()
 		pass
-	elif area.get_parent().is_in_group("corridor"):
-		corridor = area.get_parent().id
+	#elif area.get_parent().is_in_group("corridor"):
+		#corridor = area.get_parent().id
