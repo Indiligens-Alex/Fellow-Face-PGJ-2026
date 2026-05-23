@@ -22,7 +22,6 @@ var originalPos:Vector2
 @onready var tolerance: float = randf_range(1, 100)
 
 func _process(delta: float) -> void:
-	print(state)
 	match state:
 		States.WANDERING:
 			#print(dir)
@@ -38,7 +37,7 @@ func _process(delta: float) -> void:
 			move_and_slide()
 		States.TRANSITION:
 			move_and_slide()
-			if global_position.direction_to(destination):
+			if global_position.distance_to(destination) < 10:
 				state = States.CORRIDOR
 func _ready() -> void:
 	for area in $MouseInteraction.get_overlapping_areas():
@@ -58,7 +57,7 @@ func set_tolerance():
 	pass
 func check_if_player(node: Node2D) -> void:
 	#print(node.name)
-	print(3)
+	print("check_if_player")
 	if main.player != null && node.name == "Player" && !main.player.use_item.is_connected($ToleranceTimer.start):
 		main.player.use_item.connect($ToleranceTimer.start)
 
@@ -170,6 +169,7 @@ func turn_sprite_digusted() -> void:
 			#destination = global_position + Vector2(search_radius* [-1,1].pick_random(), -search_radius)*2
 	
 func reaction() -> void:
+	print("reaction")
 	got_disgusted.emit()
 	state = States.DISGUSTED;
 	main.belonging -= 1;
@@ -232,14 +232,15 @@ func next_location():
 		if  main.map.distance[corridor][i] == 1 && main.map.distance[i][goal] == min:
 			next = i;
 			break;
-	var next_corridor = main.corridors[next]
+	var next_corridor = main.corridors[corridor]
+	print("corridor ",corridor);
 	if main.map.distance[corridor][next] != -1:
 		if next_corridor.horizontal:
 			if main.map.breaks[corridor][next].x > global_position.x:
 				#next_corridor.get_node("up").add_child(self)
 				dir = Vector2.RIGHT
 			else:
-				dir= Vector2.LEFT
+				dir = Vector2.LEFT
 				#next_corridor.get_node("down").add_child(self)
 		else:
 			if main.map.breaks[corridor][next].y > global_position.y:
@@ -247,6 +248,8 @@ func next_location():
 				#next_corridor.get_node("up").add_child(self)
 			else:
 				dir = Vector2.UP
+				
+		print("shmove ",dir)
 			#next_corridor.get_node("down").add_child(self)
 	#push_error("map error next_location")
 
@@ -255,7 +258,7 @@ func _on_mouse_interaction_area_entered(area: Area2D) -> void:
 	print("in")
 	if area.is_in_group("break") && area.corridor.id == next:
 		#move to pos
-		print("trans")
+		print("trans ",area.pos)
 		destination = area.pos
 		state = States.TRANSITION
 		dir = global_position.direction_to(area.pos)
