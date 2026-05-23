@@ -10,7 +10,7 @@ var min = 10
 var max = 15
 func _ready() -> void:
 	print(position)
-	for i in main.random.randi_range(1,1):
+	for i in main.random.randi_range(min,max):
 		spawn()
 func spawn():
 	random_vector = Vector2(main.random.randf_range(-radius,radius),main.random.randi_range(-radius,radius))
