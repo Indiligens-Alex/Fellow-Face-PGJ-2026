@@ -1,7 +1,7 @@
 class_name NPC extends CharacterBody2D
 signal got_disgusted
 var corridor:int = -1;
-var goal:int = main.random.randi_range(0,2);
+var goal:int = main.random.randi_range(0,3);
 var next:int;
 enum States{WANDERING, DISGUSTED,TASK,CORRIDOR,TRANSITION,FINISH};
 var state:States = States.CORRIDOR;
@@ -239,14 +239,16 @@ func next_location():
 		#if  main.map.distance[corridor][i] == 1 && main.map.distance[i][goal] == min:
 			#next = i;
 			#break;
-	if next == corridor:#if there is a task, do it, otherwise wander
-		wander()
-		print("reached")
+	print("cors ",main.corridors)
+	if corridor == next:#if there is a task, do it, otherwise wander
 		if main.corridors[corridor].poi:
 			task(main.corridors[corridor])
+		else:
+			wander()
+		print("reached")
 		return
-	if  main.corridors[next].poi:
-		push_error("poi isn't last")
+	if  main.corridors[corridor].poi:
+		push_error("poi isn't last",corridor, next, goal)
 	var next_corridor = main.corridors[corridor]
 	print("corridor ",corridor," ",next," ",goal);
 	if main.map.distance[corridor][next] != 0:
@@ -291,7 +293,7 @@ func wander():
 
 func task(poi):
 	state = States.TASK
-	dir = global_position.direction_to(poi.pos)
+	destination = poi.pos
+	dir = global_position.direction_to(destination)
 	velocity = dir*speed
 	state = States.FINISH
-	pass

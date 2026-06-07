@@ -18,6 +18,8 @@
 [ext_resource type="Script" uid="uid://33iom77rh0a5" path="res://Scenes/corridor_algorithm.gd" id="15_ejakq"]
 [ext_resource type="PackedScene" uid="uid://dri6qstv1rdci" path="res://tie.tscn" id="15_q4yjo"]
 [ext_resource type="PackedScene" uid="uid://o4m3u505g72e" path="res://break.tscn" id="16_ejakq"]
+[ext_resource type="PackedScene" uid="uid://dk6fvfj62d211" path="res://poi.tscn" id="18_6kno7"]
+[ext_resource type="PackedScene" uid="uid://bl24rai8resv5" path="res://man_npc.tscn" id="20_uylqo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bwvt"]
 texture = ExtResource("4_b7adt")
@@ -229,13 +231,28 @@ id = 2
 
 [node name="breaks" type="Node2D" parent="Node2D7/corridor2" unique_id=2018752246]
 
+[node name="break" parent="Node2D7/corridor2/breaks" unique_id=381148495 node_paths=PackedStringArray("corridor") instance=ExtResource("16_ejakq")]
+position = Vector2(-8.1875, -0.42105192)
+scale = Vector2(0.3, 0.05)
+pos = Vector2(-20, 570)
+corridor = NodePath("../../../POI")
+
 [node name="break2" parent="Node2D7/corridor2/breaks" unique_id=1210267635 node_paths=PackedStringArray("corridor") instance=ExtResource("16_ejakq")]
 position = Vector2(-6.875, -10.157894)
 scale = Vector2(0.27, 0.053)
 pos = Vector2(-150, 320)
 corridor = NodePath("../../../corridor")
 
+[node name="POI" parent="Node2D7" unique_id=1587284128 instance=ExtResource("18_6kno7")]
+position = Vector2(-255, 52)
+pos = Vector2(-60, 560)
+corridor = 2
+id = 3
+
 [node name="Node2D6" parent="." unique_id=552065870 instance=ExtResource("15_q4yjo")]
 position = Vector2(240, 529)
+
+[node name="Man NPC" parent="." unique_id=1183907964 instance=ExtResource("20_uylqo")]
+position = Vector2(-56, 569)
 
 [editable path="Node2D2"]

@@ -27,9 +27,10 @@ func _ready() -> void:
 		#print(2)
 		for from in get_children():
 			print(3)
-			for to in get_children():
-				print(4)
-				find_distance(from,to,0,0,true);
+			if !from.poi:
+				for to in get_children():
+					print(4)
+					find_distance(from,to,0,0,true);
 		var file = FileAccess.open("res://MapCorridors.json", FileAccess.WRITE)
 		var matrix = {"distance":distanceMatrix,"breaks":breakMatrix,"nexts":nextMatrix}
 		file.store_string(JSON.stringify(matrix,"\t"))
@@ -46,6 +47,8 @@ func find_distance(from:Node2D,to:Node2D,num:int,recursive:int,first = false):
 		#nextMatrix[from.id][to.id] = from.id;
 		print("return ",num)
 		return num
+	if from.poi:
+		return max_recursion
 	#if  matrix[from.id][to.id] >= 0:
 		#print("again")
 		#return matrix[from.id][to.id]
