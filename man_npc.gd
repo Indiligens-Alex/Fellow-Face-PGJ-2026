@@ -3,7 +3,7 @@ signal got_disgusted
 var corridor:int = -1;
 var goal:int = main.random.randi_range(0,2);
 var next:int;
-enum States{WANDERING, DISGUSTED,TASK,CORRIDOR,TRANSITION};
+enum States{WANDERING, DISGUSTED,TASK,CORRIDOR,TRANSITION,FINISH};
 var state:States = States.CORRIDOR;
 var speed:float = 30
 var disgusted: bool
@@ -31,16 +31,21 @@ func _process(delta: float) -> void:
 				#print("wandered")
 				start_cooldown(false)
 		States.DISGUSTED:
-				move_and_slide()
-				
+			move_and_slide()
 		States.CORRIDOR:
 			move_and_slide()
+		States.FINISH:
+			move_and_slide()
+			if global_position.distance_to(destination) < 10:
+				state = States.WANDERING
 		States.TRANSITION:
 			move_and_slide()
 			if global_position.distance_to(destination) < 10:
 				print("to corridor")
-				next_location()
 				state = States.CORRIDOR
+				next_location()
+		States.TASK:
+			pass
 func _ready() -> void:
 	for area in $MouseInteraction.get_overlapping_areas():
 		_on_mouse_interaction_area_entered(area)
@@ -84,15 +89,15 @@ func find_destination() -> void:
 		randf_range(-search_radius, search_radius),
 		randf_range(-search_radius, search_radius))
 
-	if global_position.y < min_y:
-		offset.y = abs(search_radius)
-	elif global_position.y > max_y:
-		offset.y = -abs(search_radius)
-
-	if global_position.x < min_x:
-		offset.x = abs(search_radius)
-	elif global_position.x > max_x:
-		offset.x = -abs(search_radius)
+	#if global_position.y < min_y:
+		#offset.y = abs(search_radius)
+	#elif global_position.y > max_y:
+		#offset.y = -abs(search_radius)
+#
+	#if global_position.x < min_x:
+		#offset.x = abs(search_radius)
+	#elif global_position.x > max_x:
+		#offset.x = -abs(search_radius)
 
 	destination = global_position + offset
 	destination.x = clamp(destination.x, min_x, max_x)
@@ -227,18 +232,21 @@ func _on_tolerance_timer_timeout() -> void:
 	reaction()
 func next_location():
 	print("next")
-	next = -1;
-	var min = main.map.distance[corridor][goal]-1;
+	#var min = main.map.distance[corridor][goal]-1;
+	next = main.map.nexts[corridor][goal]
 	print("map ",corridor,": ",main.map.distance[corridor], " min:", min, " goal: ", goal)
-	for i in main.map.distance[corridor].size():
-		if  main.map.distance[corridor][i] == 1 && main.map.distance[i][goal] == min:
-			next = i;
-			break;
-	if next == -1:
+	#for i in main.map.distance[corridor].size():
+		#if  main.map.distance[corridor][i] == 1 && main.map.distance[i][goal] == min:
+			#next = i;
+			#break;
+	if next == corridor:#if there is a task, do it, otherwise wander
+		wander()
 		print("reached")
-		dir = Vector2.ZERO
-		velocity = dir*speed
+		if main.corridors[corridor].poi:
+			task(main.corridors[corridor])
 		return
+	if  main.corridors[next].poi:
+		push_error("poi isn't last")
 	var next_corridor = main.corridors[corridor]
 	print("corridor ",corridor," ",next," ",goal);
 	if main.map.distance[corridor][next] != 0:
@@ -275,3 +283,15 @@ func _on_mouse_interaction_area_entered(area: Area2D) -> void:
 		velocity = dir*speed
 	#elif area.get_parent().is_in_group("corridor"):
 		#corridor = area.get_parent().id
+
+func wander():
+	originalPos = global_position
+	walk_around()
+	state = States.WANDERING
+
+func task(poi):
+	state = States.TASK
+	dir = global_position.direction_to(poi.pos)
+	velocity = dir*speed
+	state = States.FINISH
+	pass

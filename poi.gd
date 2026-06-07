@@ -1,10 +1,12 @@
-extends Node2D
-@export var poi = false;
-@export var id:int;
-@export var horizontal:bool = false;
-var direction:Vector2 = Vector2.UP;
+extends "res://corridor.gd"
+
+@export var pos:Vector2
+@export var corridor:int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	main.corridors[id] = self;
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass

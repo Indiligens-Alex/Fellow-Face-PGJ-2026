@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dk6fvfj62d211"]
+
+[ext_resource type="PackedScene" uid="uid://baca4kv8lbdhh" path="res://corridor.tscn" id="1_yfmsu"]
+[ext_resource type="Script" uid="uid://die3j2xb0gjwi" path="res://poi.gd" id="2_gwpk6"]
+
+[node name="POI" unique_id=1020608659 instance=ExtResource("1_yfmsu")]
+script = ExtResource("2_gwpk6")
+pos = Vector2(0, 0)
+corridor = 0
+poi = true
