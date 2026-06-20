@@ -1,9 +1,11 @@
 class_name NPC extends CharacterBody2D
 signal got_disgusted
 var corridor:int = -1;
-var goal:int = main.random.randi_range(0,3);
+var goal:int;
 var next:int;
 enum States{WANDERING, DISGUSTED,TASK,CORRIDOR,TRANSITION,FINISH};
+var task = [3,1,2];
+var task_num = 0;
 var state:States = States.CORRIDOR;
 var speed:float = 30
 var disgusted: bool
@@ -37,7 +39,15 @@ func _process(delta: float) -> void:
 		States.FINISH:
 			move_and_slide()
 			if global_position.distance_to(destination) < 10:
-				state = States.WANDERING
+				task_num += 1;
+				print("task num ", task_num, " ",task.size()-1)
+				if task_num == (task.size()-1):
+					state = States.WANDERING
+					task_num = 0;
+				else:
+					goal = task[task_num]
+					state = States.CORRIDOR
+					next_location()
 		States.TRANSITION:
 			move_and_slide()
 			if global_position.distance_to(destination) < 10:
@@ -47,6 +57,7 @@ func _process(delta: float) -> void:
 		States.TASK:
 			pass
 func _ready() -> void:
+	goal = task[task_num]
 	for area in $MouseInteraction.get_overlapping_areas():
 		_on_mouse_interaction_area_entered(area)
 	next_location()
@@ -106,11 +117,15 @@ func find_destination() -> void:
 	#print(global_position)
 
 func start_cooldown(quick: bool) -> void:
-	if quick:
-		cooldown_timer.wait_time = randf_range(0.5, 1)
+	if main.random.randi_range(0,5) == 5:
+		task_num = 0;
+		task = main.tasks[randi_range(0,main.tasks.size())]
 	else:
-		cooldown_timer.wait_time = randf_range(2, 6)
-	cooldown_timer.start()
+		if quick:
+			cooldown_timer.wait_time = randf_range(0.5, 1)
+		else:
+			cooldown_timer.wait_time = randf_range(2, 6)
+		cooldown_timer.start()
 
 func turn_sprite() -> void:
 	dir = (destination - global_position).normalized()
@@ -242,7 +257,7 @@ func next_location():
 	print("cors ",main.corridors)
 	if corridor == next:#if there is a task, do it, otherwise wander
 		if main.corridors[corridor].poi:
-			task(main.corridors[corridor])
+			do_task(main.corridors[corridor])
 		else:
 			wander()
 		print("reached")
@@ -291,8 +306,10 @@ func wander():
 	walk_around()
 	state = States.WANDERING
 
-func task(poi):
+func do_task(poi):
 	state = States.TASK
+	corridor = poi.corridor
+	print(corridor," - after task")
 	destination = poi.pos
 	dir = global_position.direction_to(destination)
 	velocity = dir*speed

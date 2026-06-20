@@ -6,6 +6,7 @@ var SceneSwitcher:SceneSwitcher
 var random:RandomNumberGenerator= RandomNumberGenerator.new();
 #from file
 var map:Dictionary;
+var tasks = [[1]];
 #we add them in corridor/POI script
 var corridors = [];
 func _ready():
